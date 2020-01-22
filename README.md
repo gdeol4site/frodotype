@@ -8,4 +8,4 @@ awk 'FNR==1{print ""}1' *.txt > unprocessed.txt
 
 sed -i '/^$/d' unprocessed.txt
 
-3. 
+3. Word and line counts of unprocessed files 
