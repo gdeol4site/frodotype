@@ -1,19 +1,15 @@
-Text preprocessing:
+Putting the final text file together:
 
-1. Concatenating the files with a blank line inserted after each file to prevent words merging:
+1. Concatenate the files:
 
-$ awk 'FNR==1{print ""}1' *.txt > unprocessed.txt
+$ for f in *.txt do (cat "${f}"; echo) >> unprocessed.txt; done
 
-2. Removing the blank lines
+2. Deleting all none ASCII charcaters:
 
-$ sed -i '/^$/d' unprocessed.txt
+$ LC_ALL=C tr -dc '\0-\177' < unprocessed.txt > processed.txt
 
-3. Word and line counts of unprocessed files 
+3. Removing numbers and dashes from the text:
 
-$ wc -w unprocessed.txt
+$ tr -d '[0-9-]' < processed.txt > final.txt
 
-32694245
-
-$ wc -l unprocessed.txt
-
-934904
+Additional processing is done in the text-analysis notebook.
