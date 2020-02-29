@@ -1,0 +1,144 @@
+body { background: @bg;}
+a { color: black; text-decoration: none; }
+
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
+
+
+p {
+  border-right: solid 4px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgba(255,255,255,1);
+}
+
+/* Animation */
+p {
+  animation: animated-text 2.9s steps(29,end) 1s 1 normal both,
+             animated-cursor 760ms steps(29,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 37vw;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0, 0 ,0,.75);}
+  to{border-right-color: transparent;}
+}
+
+.slight-left {
+  margin-left: -12px;
+}
+
+.shire {
+  background-size: cover;
+  background-image: url("888.svg");
+  opacity: 1;
+}
+
+.title-font {
+  font-family: 'Merriweather';
+  font-size: 8vw;
+  color: black;
+}
+
+.title-center {
+  vertical-align: middle;
+}
+
+.shire2 {
+  background-size: cover;
+  background-image: url("hex3.jpg");
+  opacity: 1;
+}
+
+.wht-title{
+  color: white;
+  font-family: 'Playfair Display';
+  font-size: 3rem;
+}
+
+.wht {
+  color: white;
+}
+
+.wht-bold {
+  font-weight: bold;
+}
+
+.orng{
+  background-color: orange;
+}
+
+.mull {
+  background-color: rgb(115, 38, 77, 0.89);
+  padding: 1.5rem;
+}
+
+.control-pad {
+  padding-left: 6rem;
+}
+
+.output-pad {
+  padding-top: 2.25rem;
+}
+
+.blk{
+  background-color: black;
+  opacity: 1;
+}
+
+.ai{
+  color: orange;
+}
+
+.typewriter{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .17em solid orange; /* The typwriter cursor */
+  height: 60%;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}

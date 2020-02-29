@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+</head>
+
+<body>
+
+  <section class="hero section is-fullheight shire">
+
+    <nav class="level">
+      <h5 class="level-item has-text-centered">
+        <a class="link is-info">Portfolio</a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <a class="link is-info">Github</a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;">
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <a class="link is-info">How it works</a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <a class="link is-info">Contact</a>
+      </h5>
+    </nav>
+
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <p class="title-font"> FrodoType </p>
+            <div class="column is-5  slight-left">
+              <h5 class="subtitle is-4 has-text-justified" id="typedtext"> </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-2 is-offset-5">
+      <div class="arrow bounce">
+        <a class="fa fa-arrow-down fa-3x" href="#"></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+
+</body>
+
+<!-- Max Wolfe's custom JS for form controls -->
+
+<script type="text/javascript">
+  $(function() {
+    $('#gen-form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "https://gpt2-wpmqib3yta-uc.a.run.app",
+        dataType: "json",
+        data: JSON.stringify(getInputValues()),
+        beforeSend: function(data) {
+          $('#generate-text').addClass("is-loading");
+          $('#generate-text').prop("disabled", true);
+        },
+        success: function(data) {
+          $('#generate-text').removeClass("is-loading");
+          $('#generate-text').prop("disabled", false);
+          $('#tutorial').remove();
+          var gentext = data.text;
+          if ($("#prefix").length & $("#prefix").val() != '') {
+            var pattern = new RegExp('^' + $("#prefix").val(), 'g');
+            var gentext = gentext.replace(pattern, '<strong>' + $("#prefix").val() + '</strong>');
+          }
+
+          var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
+          var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
+          $(html).appendTo('#model-output').hide().fadeIn("slow");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          $('#generate-text').removeClass("is-loading");
+          $('#generate-text').prop("disabled", false);
+          $('#tutorial').remove();
+          var html = '<div class="gen-box warning">There was an error generating the text! Please try again!</div><div class="gen-border"></div>';
+          $(html).appendTo('#model-output').hide().fadeIn("slow");
+        }
+      });
+    });
+  });
+
+  function getInputValues() {
+    var inputs = {};
+    $("textarea, input").each(function() {
+      inputs[$(this).attr('id')] = $(this).val();
+    });
+    return inputs;
+  }
+</script>
+
+<!-- Custom Javascript for generating line by line text + typewriting -->
+
+<script type="text/javascript">
+  // set up text to print, each item in array is new line
+  var aText = new Array(
+    //"                                     ",
+    "Fantasy is a text generator based on OpenAI's small GPT2 model and is further trained and finetuned on the text of fantasy novels. Change the parameters on the right to generate interesting text."
+  );
+  var iSpeed = 17; // time delay of print out
+  var iIndex = 0; // start printing array at this posision
+  var iArrLength = aText[0].length; // the length of the text array
+  var iScrollAt = 20; // start scrolling up at this many lines
+
+  var iTextPos = 0; // initialise text position
+  var sContents = ''; // initialise contents variable
+  var iRow; // initialise current row
+
+  function typewriter() {
+    sContents = ' ';
+    iRow = Math.max(0, iIndex - iScrollAt);
+    var destination = document.getElementById("typedtext");
+
+    while (iRow < iIndex) {
+      sContents += aText[iRow++] + '<br />';
+    }
+    destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "|";
+    if (iTextPos++ == iArrLength) {
+      iTextPos = 0;
+      iIndex++;
+      if (iIndex != aText.length) {
+        iArrLength = aText[iIndex].length;
+        setTimeout("typewriter()", 500);
+      }
+    } else {
+      setTimeout("typewriter()", iSpeed);
+    }
+  }
+
+
+  typewriter();
+</script>
+
+</html>
