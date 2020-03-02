@@ -25,8 +25,7 @@ a { color: black; text-decoration: none; }
 
 
 
-
-p {
+.typed {
   border-right: solid 4px rgba(0,255,0,.75);
   white-space: nowrap;
   overflow: hidden;
@@ -34,7 +33,7 @@ p {
 }
 
 /* Animation */
-p {
+.typed {
   animation: animated-text 2.9s steps(29,end) 1s 1 normal both,
              animated-cursor 760ms steps(29,end) infinite;
 }
@@ -51,6 +50,22 @@ p {
 @keyframes animated-cursor{
   from{border-right-color: rgba(0, 0 ,0,.75);}
   to{border-right-color: transparent;}
+}
+
+.pad-left {
+  padding-left: 13em;
+}
+
+.bullet {
+  padding-top: 1.5em;
+}
+
+.bullet-2{
+  padding-top: 1em;
+}
+
+.bullet-3 {
+  padding-bottom: 1.5em;
 }
 
 .slight-left {
@@ -89,8 +104,20 @@ p {
   color: white;
 }
 
+.form-pad {
+  padding-left: 5em
+}
+
 .wht-bold {
   font-weight: bold;
+}
+
+.table-background-color {
+  background-color: orange;
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .orng{
@@ -117,6 +144,15 @@ p {
 
 .ai{
   color: orange;
+}
+.graph-pad {
+  padding-top: 15rem;
+}
+
+.has-vertically-aligned-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .typewriter{
