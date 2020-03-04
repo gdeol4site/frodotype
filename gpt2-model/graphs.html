@@ -12,9 +12,11 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
   <!--===================================================================================================-->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
   <!--===================================================================================================-->
 </head>
 
@@ -29,16 +31,12 @@
 
       <!--CHART 1-->
 
-      <div class="column is-4">
+      <div class="column is-12">
         <article class="message is-dark">
           <div class="message-header">
             <p>Chart</p>
           </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 500px; min-height: 365px;">
-              <div id="chart"> </div>
-            </div>
-          </div>
+          <div class="ct-chart ct-perfect-fourth"></div>
         </article>
       </div>
 
@@ -51,7 +49,7 @@
           </div>
           <div class="message-body" style="position: relative;">
             <div style="width: 100%; min-height: 100%;">
-              <canvas id="myChart" width="800" height="270"> </canvas>
+              <canvas id="myChart" width="800" height="350"> </canvas>
             </div>
           </div>
         </article>
@@ -66,6 +64,33 @@
 
 <!--======================= CUSTOM JAVASCRIPT ====================================-->
 
+<script>
+  new Chartist.Bar('.ct-chart', {
+    labels: ['Jordan',
+      'Erikson',
+      'G. R. R. Martin',
+      'Sanderson',
+      'King',
+      'J. K. Rowling',
+      'Williams',
+      'Lawhead',
+      'Rothfuss',
+      'Tolkien',
+      'Paolini',
+      'Abercrombie',
+      'Eddings',
+      'Bakker',
+      'Wolfe',
+      'Gavriel Kay'
+    ],
+    series: [4074024, 3263937, 1745214, 1384299, 1342947,
+      1104023, 1073825, 936893, 653713, 636241, 629820,
+      619176, 528051, 510086, 388113
+    ],
+  }, {
+    distributeSeries: true
+  });
+</script>
 
 
 <script>
@@ -73,38 +98,54 @@
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: [['Robert', 'Jordan'],
-      ['Steven', 'Erikson'],
-      ['George', 'R. R. Martin'], ['Brandon', 'Sanderson'],
-      ['Stephen', 'King'], ['J. K.', 'Rowling'],
-      ['Tad', 'Williams'],
-      ['Stephen', 'R. Lawhead'],
-      ['Patrick', 'Rothfuss'],
-      ['J. R. R.', 'Tolkien'],
-      ['Christopher', 'Paolini'],
-      ['Joe', 'Abercrombie'],
-      ['David', 'Eddings'],
-      ['Scott', 'Bakker'],
-      ['Gene', 'Wolfe'],
-      ['Guy', 'Gavriel Kay'],
-      ['Garth', 'Nix'],
-      ['C. S.', 'Lewis'],
-      ['Ursula', 'K Le Guin'],
-      ['Fred', 'Saberhagen']],
+      labels: [
+        ['Robert', 'Jordan'],
+        ['Steven', 'Erikson'],
+        ['George', 'R. R. Martin'],
+        ['Brandon', 'Sanderson'],
+        ['Stephen', 'King'],
+        ['J. K.', 'Rowling'],
+        ['Tad', 'Williams'],
+        ['Stephen', 'R. Lawhead'],
+        ['Patrick', 'Rothfuss'],
+        ['J. R. R.', 'Tolkien'],
+        ['Christopher', 'Paolini'],
+        ['Joe', 'Abercrombie'],
+        ['David', 'Eddings'],
+        ['Scott', 'Bakker'],
+        ['Gene', 'Wolfe'],
+        ['Guy', 'Gavriel Kay'],
+        ['Garth', 'Nix'],
+        ['C. S.', 'Lewis'],
+        ['Ursula', 'K Le Guin'],
+        ['Fred', 'Saberhagen']
+      ],
       datasets: [{
         label: '# of Votes',
         data: [4074024, 3263937, 1745214, 1384299, 1342947,
-         1104023, 1073825, 936893, 653713, 636241, 629820,
-         619176, 528051, 510086, 388113, 373211, 330083,
-         319105, 242246, 173849],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
+          1104023, 1073825, 936893, 653713, 636241, 629820,
+          619176, 528051, 510086, 388113, 373211, 330083,
+          319105, 242246, 173849
         ],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(255, 206, 86, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+          'rgba(255, 159, 64, 0.8)',
+          'rgba(52, 89, 149, 0.8)',
+          'rgba(3, 206, 164, 0.8)',
+          'rgba(251, 77, 61, 0.8)',
+          'rgba(189, 191, 9, 0.8)',
+          'rgba(202, 21, 81, 0.8)',
+          'rgba(149, 25, 12, 0.8)',
+          'rgba(97, 3, 69, 0.8)',
+          'rgba(16, 126, 125, 0.8)',
+          'rgba(189, 191, 9, 0.8)',
+          'rgba(4, 75, 127, 0.8)'
+          'rgba(4, 75, 127, 0.8)'
+        ],54, 53, 55
         borderColor: [
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)',
@@ -206,110 +247,110 @@
 
 
 <script>
-
   var options = {
     series: [{
-    data: [4074024, 3263937, 1745214, 1384299, 1342947,
-     1104023, 1073825, 936893, 653713, 636241, 629820,
-     619176, 528051, 510086, 388113, 373211, 330083,
-     319105, 242246, 173849]
-  }],
+      data: [4074024, 3263937, 1745214, 1384299, 1342947,
+        1104023, 1073825, 936893, 653713, 636241, 629820,
+        619176, 528051, 510086, 388113, 373211, 330083,
+        319105, 242246, 173849
+      ]
+    }],
 
     chart: {
-    height: 350,
-    type: 'bar',
-    events: {
-      click: function(chart, w, e) {
-        // console.log(chart, w, e)
+      height: 350,
+      type: 'bar',
+      events: {
+        click: function(chart, w, e) {
+          // console.log(chart, w, e)
+        }
+      }
+    },
+    colors: colors,
+    plotOptions: {
+      bar: {
+        columnWidth: '45%',
+        distributed: true
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    legend: {
+      show: false
+    },
+    xaxis: {
+      categories: [
+
+        ['Robert', 'Jordan'],
+        ['Steven', 'Erikson'],
+        ['George', 'R. R. Martin'],
+        ['Brandon', 'Sanderson'],
+        ['Stephen', 'King'],
+        ['J. K.', 'Rowling'],
+        ['Tad', 'Williams'],
+        ['Stephen', 'R. Lawhead'],
+        ['Patrick', 'Rothfuss'],
+        ['J. R. R.', 'Tolkien'],
+        ['Christopher', 'Paolini'],
+        ['Joe', 'Abercrombie'],
+        ['David', 'Eddings'],
+        ['Scott', 'Bakker'],
+        ['Gene', 'Wolfe'],
+        ['Guy', 'Gavriel Kay'],
+        ['Garth', 'Nix'],
+        ['C. S.', 'Lewis'],
+        ['Ursula', 'K Le Guin'],
+        ['Fred', 'Saberhagen']
+
+      ],
+
+
+      labels: {
+        style: {
+          colors: colors,
+          fontSize: '12px'
+        }
       }
     }
-  },
-  colors: colors,
-  plotOptions: {
-    bar: {
-      columnWidth: '45%',
-      distributed: true
-    }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  legend: {
-    show: false
-  },
-  xaxis: {
-    categories:[
-
-    ['Robert', 'Jordan'],
-    ['Steven', 'Erikson'],
-    ['George', 'R. R. Martin'],
-    ['Brandon', 'Sanderson'],
-    ['Stephen', 'King'],
-    ['J. K.', 'Rowling'],
-    ['Tad', 'Williams'],
-    ['Stephen', 'R. Lawhead'],
-    ['Patrick', 'Rothfuss'],
-    ['J. R. R.', 'Tolkien'],
-    ['Christopher', 'Paolini'],
-    ['Joe', 'Abercrombie'],
-    ['David', 'Eddings'],
-    ['Scott', 'Bakker'],
-    ['Gene', 'Wolfe'],
-    ['Guy', 'Gavriel Kay'],
-    ['Garth', 'Nix'],
-    ['C. S.', 'Lewis'],
-    ['Ursula', 'K Le Guin'],
-    ['Fred', 'Saberhagen']
-
-  ],
-
-
-    labels: {
-      style: {
-        colors: colors,
-        fontSize: '12px'
-      }
-    }
-  }
   };
 
   var chart = new ApexCharts(document.querySelector("#test"), options);
   chart.render();
-
 </script>
 
 <script>
   var options = {
-          series: [{
-          name: 'Word Count',
-          data: [4074024, 3263937, 1745214, 1384299, 1342947,
-           1104023, 1073825, 936893, 653713, 636241, 629820,
-           619176, 528051, 510086, 388113, 373211, 330083,
-           319105, 242246, 173849]
-        }],
+    series: [{
+      name: 'Word Count',
+      data: [4074024, 3263937, 1745214, 1384299, 1342947,
+        1104023, 1073825, 936893, 653713, 636241, 629820,
+        619176, 528051, 510086, 388113, 373211, 330083,
+        319105, 242246, 173849
+      ]
+    }],
 
-        chart: {
-          height: 350,
-          type: 'bar',
-        },
-        colors: colors,
-        plotOptions: {
-          bar: {
-            columnWidth: '50%',
-            distributed: true
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
+    chart: {
+      height: 350,
+      type: 'bar',
+    },
+    colors: colors,
+    plotOptions: {
+      bar: {
+        columnWidth: '50%',
+        distributed: true
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
 
-        xaxis: {
-          labels: {
-            rotate: -45
-          },
-          categories:
+    xaxis: {
+      labels: {
+        rotate: -45
+      },
+      categories:
 
-          ['Jordan',
+        ['Jordan',
           'Erikson',
           'G. R. R. Martin',
           'Sanderson',
@@ -328,19 +369,20 @@
           'Nix',
           'C. S. Lewis',
           'Le Guin',
-          'Saberhagen'],
+          'Saberhagen'
+        ],
 
-          tickPlacement: 'on'
-        },
-        yaxis: {
-          title: {
-            text: 'Servings',
-          },
-        },
-        };
+      tickPlacement: 'on'
+    },
+    yaxis: {
+      title: {
+        text: 'Servings',
+      },
+    },
+  };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-  </script>
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
+</script>
 
 </html>
