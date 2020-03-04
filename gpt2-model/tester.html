@@ -2,20 +2,30 @@
 <html>
 
 <head>
+  <!--===================================================================================================-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===================================================================================================-->
   <title>Hello Bulma!</title>
+  <!--===================================================================================================-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <!--===================================================================================================-->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
+  <!--===================================================================================================-->
 </head>
 
 <body>
 
+<!--=============== SECTION 1: LANDING ===============-->
+
   <section class="hero section is-fullheight shire">
+
+    <!--=============== NAVBAR ===============-->
+
     <nav class="level">
       <h5 class="level-item has-text-centered">
         <a class="link is-info">Portfolio</a>
@@ -24,7 +34,7 @@
         <a class="link is-info">Data</a>
       </h5>
       <h5 class="level-item has-text-centered">
-        <img src="type-text.svg" alt="" style="width: 8.5rem;">
+        <img src="typewriter.svg" alt="" style="height: 60px;">
       </h5>
       <h5 class="level-item has-text-centered">
         <a class="link is-info">How it works</a>
@@ -33,6 +43,8 @@
         <a class="link is-info">Contact</a>
       </h5>
     </nav>
+
+  <!--=============== INTRO ===============-->
 
     <div class="hero-body">
       <div class="container">
@@ -46,123 +58,145 @@
         </div>
       </div>
     </div>
+
+  <!--=============== DOWN BUTTON ===============-->
+
     <div class="column is-2 is-offset-5">
       <div class="arrow bounce">
         <a class="fa fa-arrow-down fa-3x" href="#"></a>
       </div>
     </div>
+
   </section>
+
+  <!--=============== SECTION 2: TEXT GENERATION ===============-->
 
   <section class="hero section is-fullheight">
 
-    <div class="hero-body">
-      <div class="container">
+      <!--=============== FORM CONTROLS ===============-->
+      <div class="box">
+        <div class="columns is-centered">
+          <div class="container">
 
-        <div class="columns">
-          <div class="column is-half">
-
-            <div class="columns form-pad">
-
-              <div class="container">
-                <label class="label">Text Prompt</label>
-                <h3 class="subtitle is-4"> Starts the generated text with the specified text. </h3>
+            <!--=============== FORM COLUMN 1 ===============-->
+            <!--INFO TEXT -->
+            <div class="column">
+              <!--<div class="box">-->
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="container">
+                    <label class="label">Text Prompt</label>
+                    <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  </div>
+                </div>
+                <!--INPUT FORM -->
+                <div class="column">
+                  <form id="gen-form">
+                    <div class="field">
+                      <label class="label">Text Prompt</label>
+                      <div class="control">
+                        <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      </div>
+                      <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
 
-            <br>
-            <br>
-
-            <div class="columns form-pad">
-
-              <div class="container bullet">
-                <label class="label">Text Prompt</label>
-                <h3 class="subtitle is-4"> Starts the generated text with the specified text. </h3>
+            <!--=============== FORM COLUMN 2 ===============-->
+            <!--INFO TEXT -->
+            <div class="column">
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="container">
+                    <label class="label">Text Prompt</label>
+                    <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  </div>
+                </div>
+                <!--INPUT FORM -->
+                <div class="column">
+                  <form id="gen-form">
+                    <div class="field">
+                      <label class="label">Text Prompt</label>
+                      <div class="control">
+                        <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      </div>
+                      <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
 
-            <br>
-            <br>
-
-            <div class="columns form-pad">
-
-              <div class="container bullet-2">
-                <label class="label">Text Prompt</label>
-                <h3 class="subtitle is-4"> Starts the generated text with the specified text. </h3>
+            <!--=============== FORM COLUMN 3 ===============-->
+            <!--INFO TEXT -->
+            <div class="column">
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="container">
+                    <label class="label">Text Prompt</label>
+                    <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  </div>
+                </div>
+                <!--INPUT FORM -->
+                <div class="column">
+                  <form id="gen-form">
+                    <div class="field">
+                      <label class="label">Text Prompt</label>
+                      <div class="control">
+                        <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      </div>
+                      <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
 
-
-            <br>
-            <br>
-
-            <div class="columns form-pad">
-
-              <div class="container">
-                <label class="label">Text Prompt</label>
-                <h3 class="subtitle is-4"> Starts the generated text with the specified text. </h3>
+            <!--=============== FORM COLUMN 4 ===============-->
+            <!--INFO TEXT -->
+            <div class="column">
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="container">
+                    <label class="label">Text Prompt</label>
+                    <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  </div>
+                </div>
+                <!--INPUT FORM -->
+                <div class="column">
+                  <form id="gen-form">
+                    <div class="field">
+                      <label class="label">Text Prompt</label>
+                      <div class="control">
+                        <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      </div>
+                      <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
 
-          </div>
-
-          <div class="column is-half">
-            <div class="columns form-pad">
-              <form id="gen-form">
-                <div class="field">
-                  <label class="label">Text Prompt</label>
-                  <div class="control">
-                    <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
-                  </div>
-                  <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
-                </div>
-                <div class="field">
-                  <label class="label">Generated Text Length</label>
-                  <div class="control">
-                    <input id="length" class="input" type="text" placeholder="Text input" value="100">
-                  </div>
-                  <h5 class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></h5>
-                </div>
-
-                <div class="field">
-                  <label class="label">Temperature</label>
-                  <div class="control">
-                    <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
-                  </div>
-                  <h5 class="help">Controls the generated text "creativity." <em>(the higher the temperature, the more
-                      creative)</em></h5>
-                </div>
-                <div class="field">
-                  <label class="label">Top <em>k</em></label>
-                  <div class="control">
-                    <input id="top_k" class="input" type="text" placeholder="40" value="40">
-                  </div>
-                  <h5 class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set to 0 to
-                      disable)</em></h5>
-                </div>
-                <div class="buttons">
-                  <span class="control">
-                    <button type="submit" name="submit" id="generate-text" class="button is-link">
-                      <span class="icon">
-                        <i class="fas fa-md fa-pen"></i>
-                      </span><span>Generate Text!</span></button>
-                  </span>
-
-                </div>
-              </form>
-            </div>
-
+            <!--=============== FORM CONTROLS ===============-->
 
           </div>
         </div>
       </div>
-    </div>
 
   </section>
 
+<!--=============== SECTION 3: DATA TABLE ===============-->
+
   <section>
+
     <div class="columns">
       <div class="column is-8 is-offset-2">
         <div class="box card-5">
+
+          <!--TABLE HEADER-->
+
           <table class="table">
             <thead>
               <tr>
@@ -175,6 +209,9 @@
                 <th>Words per Book</th>
               </tr>
             </thead>
+
+            <!--INPUT FORM -->
+
             <tbody>
               <tr>
                 <th>Brandon Sanderson</th>
@@ -210,6 +247,7 @@
                 <td>276,860</td>
               </tr>
 
+              <!--INPUT FORM -->
 
               <tr>
                 <th>C. S. Lewis</th>
@@ -246,6 +284,9 @@
                 <td>1.57%</td>
                 <td>45,586</td>
               </tr>
+
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Christopher Paolini</th>
                 <td>
@@ -277,6 +318,9 @@
                 <td>3.10%</td>
                 <td>209,940</td>
               </tr>
+
+              <!--INPUT FORM -->
+
               <tr class="is-selected">
                 <th>David Eddings</th>
                 <td>
@@ -309,6 +353,9 @@
                 <td>2.60%</td>
                 <td>105,610</td>
               </tr>
+
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Fred Saberhagen</th>
                 <td>
@@ -339,6 +386,8 @@
                 <td>0.86%</td>
                 <td>57,950</td>
               </tr>
+
+              <!--INPUT FORM -->
 
               <tr>
                 <th>Garth Nix</th>
@@ -371,6 +420,8 @@
                 <td>110,028</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Gene Wolfe</th>
                 <td>
@@ -400,6 +451,8 @@
                 <td>1.91%</td>
                 <td>194,057</td>
               </tr>
+
+              <!--INPUT FORM -->
 
               <tr>
                 <th>George R. R. Martin</th>
@@ -434,6 +487,8 @@
                 <td>349,043</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Guy Gavriel Kay</th>
                 <td>
@@ -465,6 +520,8 @@
                 <td>124,404</td>
 
               </tr>
+
+              <!--INPUT FORM -->
 
               <tr>
                 <th>J. K. Rowling</th>
@@ -501,6 +558,8 @@
                 <td>157,718</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>J. R. R. Tolkien</th>
                 <td>
@@ -534,6 +593,8 @@
                 <td>127,248</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Joe Abercrombie</th>
                 <td>
@@ -565,6 +626,8 @@
                 <td>206,392</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Patrick Rothfuss</th>
                 <td>
@@ -595,6 +658,8 @@
                 <td>326,857</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Robert Jordan</th>
                 <td>
@@ -612,8 +677,6 @@
                         <div class="dropdown-content">
                           <div class="dropdown-item">
                             <p>New spring</p>
-
-
                             <p>The Great Hunt</p>
                             <p>The Dragon Reborn</p>
                             <p>The Shadow Rising</p>
@@ -626,7 +689,6 @@
                             <p>Knife of Dreams</p>
                             <p>Towers of Midnight</p>
                             <p>A Memory of Light</p>
-
                           </div>
                         </div>
                       </div>
@@ -638,6 +700,9 @@
                 <td>20.04%</td>
                 <td>291,002</td>
               </tr>
+
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Scott Bakker</th>
                 <td>
@@ -668,6 +733,8 @@
                 <td>2.51%</td>
                 <td>170,029</td>
               </tr>
+
+              <!--INPUT FORM -->
 
               <tr>
                 <th>Stephen King</th>
@@ -705,6 +772,8 @@
                 <td>167,868</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Stephen R. Lawhead</th>
                 <td>
@@ -738,6 +807,8 @@
                 <td>4.61%</td>
                 <td>156,149</td>
               </tr>
+
+              <!--INPUT FORM -->
 
               <tr>
                 <th>Steven Erikson</th>
@@ -777,6 +848,8 @@
                 <td>326,394</td>
               </tr>
 
+              <!--INPUT FORM -->
+
               <tr>
                 <th>Tad Williams</th>
                 <td>
@@ -808,6 +881,8 @@
                 <td>5.28%</td>
                 <td>268,456</td>
               </tr>
+
+              <!--INPUT FORM -->
 
               <tr>
                 <th>Ursula K Le Guin</th>
@@ -842,18 +917,29 @@
               </tr>
             </tbody>
           </table>
+
+          <!--TABLE END-->
+
         </div>
       </div>
     </div>
+
   </section>
 
+  <!--=============== SECTION 4: DASHBOARD ===============-->
+
   <section class="hero is-fullheight">
-    <div class="columns is-multiline is-centered" style="height: auto !important; padding-top: 4rem;">
+
+    <!--=============== BEGIN GRAPH ROW ===============-->
+
+    <div class="columns is-multiline is-centered" style="height: auto !important;">
+
+      <!--CHART 1-->
+
       <div class="column is-4">
         <article class="message is-dark">
           <div class="message-header">
             <p>Chart</p>
-
           </div>
           <div class="message-body" style="position: relative;">
             <div style="width: 100%; min-height: 365px;">
@@ -862,31 +948,33 @@
           </div>
         </article>
       </div>
+
+      <!--CHART 2-->
+
       <div class="column is-4">
         <article class="message is-dark">
           <div class="message-header">
             <p>Chart</p>
-
           </div>
           <div class="message-body" style="position: relative;">
             <div style="width: 100%; min-height: 365px;">
               <canvas id="myChart" width="400" height="400"> </canvas>
             </div>
-
           </div>
         </article>
-
       </div>
     </div>
+
+    <!--=============== END GRAPH ROW ===============-->
 
   </section>
 
 </body>
 
+  <!--======================= CUSTOM JAVASCRIPT ====================================-->
+
+
 <!-- Max Wolfe's custom JS for form controls -->
-
-
-
 <script type="text/javascript">
   $(function() {
     $('#gen-form').submit(function(e) {
