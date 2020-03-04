@@ -454,4 +454,105 @@
   chart.render();
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var options = {
+          series: [{
+          name: 'Word Count',
+          data: [4074024, 3263937, 1745214, 1384299, 1342947,
+           1104023, 1073825, 936893, 653713, 636241, 629820,
+           619176, 528051, 510086, 388113, 373211, 330083,
+           319105, 242246, 173849]
+        }],
+
+        chart: {
+          height: 350,
+          type: 'bar',
+        },
+        colors: colors,
+        plotOptions: {
+          bar: {
+            columnWidth: '50%',
+            distributed: true
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+
+        xaxis: {
+          labels: {
+            rotate: -45
+          },
+          categories:
+
+          ['Jordan',
+          'Erikson',
+          'G. R. R. Martin',
+          'Sanderson',
+          'King',
+          'J. K.Rowling',
+          'Williams',
+          'Lawhead',
+          'Rothfuss',
+          'Tolkien',
+          'Paolini',
+          'Abercrombie',
+          'Eddings',
+          'Bakker',
+          'Wolfe',
+          'Gavriel Kay',
+          'Nix',
+          'C. S. Lewis',
+          'Le Guin',
+          'Saberhagen'],
+
+          tickPlacement: 'on'
+        },
+        yaxis: {
+          title: {
+            text: 'Servings',
+          },
+        },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+  </script>
+
 </html>
