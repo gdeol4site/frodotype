@@ -17,7 +17,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
   <!--===================================================================================================-->
 </head>
 
@@ -38,6 +39,15 @@
             <p>Chart</p>
           </div>
           <canvas id="chartjs-7" class="chartjs" width="400" height="200"></canvas>
+        </article>
+      </div>
+
+      <div class="column is-6">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Chart</p>
+          </div>
+          <canvas id="test"></canvas>
         </article>
       </div>
 
@@ -99,6 +109,52 @@
 </body>
 
 <!--======================= CUSTOM JAVASCRIPT ====================================-->
+
+<script>
+
+var COLORS = [
+'#4dc9f6',
+'#f67019',
+'#f53794',
+'#537bc4',
+'#acc236',
+'#166a8f',
+'#00a950',
+'#58595b',
+'#8549ba'
+];
+var ctx = document.getElementById('test').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+  type: 'bubble',
+      data: {
+          labels: ['shoulder', 'blood'],
+          datasets: [{
+              data: [{
+                "x": 400,
+                "y": 0,
+                "r": 0
+              }, {
+                "x": 500,
+                "y": 3,
+                "r": 15
+              }]
+          }]
+      },
+      options: {
+          plugins: {
+              datalabels: {
+                  formatter: function(value, context) {
+                      return context.chart.data.labels[context.dataIndex];
+                  }
+              }
+          }
+      }
+  });
+
+</script>
+
 
 <script>
 new Chart(document.getElementById("chartjs-7"), {
