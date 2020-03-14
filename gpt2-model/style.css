@@ -25,7 +25,9 @@ a { color: black; text-decoration: none; }
   }
 }
 
-
+.blob-gen {
+  
+}
 
 .typed {
   border-right: solid 4px rgba(0,255,0,.75);

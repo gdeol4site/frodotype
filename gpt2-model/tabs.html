@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--===================================================================================================-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===================================================================================================-->
+  <title>Hello Bulma!</title>
+  <!--===================================================================================================-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <!--===================================================================================================-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
+  <script type="text/javascript" src="chartjs-plugin-datalabels.js"></script>
+  <script type="text/javascript" src="chartjs-plugin-colorschemes.js"></script>
+  <script type="text/javascript" src="charts.js"></script>
+  <script type="text/javascript" src="functions.js"></script>
+
+  <!--===================================================================================================-->
+</head>
+
+<body>
+
+  <section>
+    <div class="container" style="padding: 0.75rem;">
+    <nav class="tabs is-boxed is-medium">
+            <div class="container">
+              <ul>
+                <li class="tab is-active" onclick="openTab(event,'WebDev')"><a>Web Development</a></li>
+                <li class="tab" onclick="openTab(event,'WebAud')"><a >Website Audit</a></li>
+                <li class="tab" onclick="openTab(event,'Support')"><a >Support</a></li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+  </section>
+
+  <!--=============== SECTION 1: LANDING ===============-->
+
+  <section class="hero section is-fullheight shire">
+
+    <!--=============== INTRO ===============-->
+
+    <div class="hero-body">
+      <div class="container content-tab" id="WebDev">
+        <div class="columns">
+          <div class="column">
+            <p class="title-font typed"> FrodoType </p>
+            <div class="column is-5  slight-left">
+              <h5 class="subtitle is-4 has-text-justified" id="typedtext"> </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+
+  <!--=============== SECTION 2: TEXT GENERATION ===============-->
+
+  <section class="hero section is-fullheight">
+    <div class="container content-tab" id="WebAud" style="display:none">
+
+    <!--=============== FORM CONTROLS ===============-->
+    <div class="box content-tab" id="generate">
+      <div class="columns is-centered">
+        <div class="container">
+
+          <!--=============== FORM COLUMN 1 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <!--<div class="box">-->
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. Starts the generated text with the specified text. Starts the generated text with the specified text.</h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 2 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 3 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 4 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM CONTROLS ===============-->
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+</body>
