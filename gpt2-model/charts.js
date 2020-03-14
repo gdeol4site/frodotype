@@ -704,7 +704,6 @@ new Chart(document.getElementById("namesbar"), {
   data: {
     labels: ["Harry", "Rand", "Egwene", "Perrin", "Roland", "Elayne", "Eragon", "Nynaeve", "Simon", "Eddie", "Hermione", "Elend", "Garion", "Jake", "Arthur", "Moiraine", "Dumbledore", "Susannah", "Kelsier"],
     datasets: [{
-      label: "",
       data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
       fill: false,
 

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--===================================================================================================-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===================================================================================================-->
+  <title>Hello Bulma!</title>
+  <!--===================================================================================================-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <!--===================================================================================================-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
+  <script type="text/javascript" src="chartjs-plugin-datalabels.js"></script>
+  <script type="text/javascript" src="chartjs-plugin-colorschemes.js"></script>
+  <script type="text/javascript" src="charts.js"></script>
+  <script type="text/javascript" src="functions.js"></script>
+
+  <!--===================================================================================================-->
+</head>
+
+<body class="has-navbar-fixed-top">
+
+
+  <!--=============== SECTION 1: LANDING ===============-->
+
+  <section class="hero section is-fullheight shire">
+
+    <!--=============== NAVBAR ===============-->
+
+    <nav class="level navbar is-primary is-fixed-top ">
+      <h5 class="level-item has-text-centered">
+        <a href="#intro" class="link is-info">Home</a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <a href="#generator" class="link is-info">Generate Text!!1</a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <img src="typewriter.svg" alt="Generate Text" style="height: 60px;">
+        <a class="link is-info"></a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <a href="#charts" class="link is-info">Data Visualization</a>
+      </h5>
+      <h5 class="level-item has-text-centered">
+        <a href="#data" class="link is-info">Data</a>
+      </h5>
+    </nav>
+
+    <!--=============== INTRO ===============-->
+
+    <div class="hero-body" id="intro">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <p class="title-font typed"> FrodoType </p>
+            <div class="column is-5  slight-left">
+              <h5 class="subtitle is-4 has-text-justified" id="typedtext"> </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+    <!--=============== DOWN BUTTON ===============-->
+<!--
+    <div class="column is-2 is-offset-5">
+      <div class="arrow bounce">
+        <a class="fa fa-arrow-down fa-3x" href="#"></a>
+      </div>
+    </div>
+
+  </section>
+-->
+  <!--=============== SECTION 2: TEXT GENERATION ===============-->
+
+  <section class="section is-fullheight" id="generator">
+    <div class="container blob-bg">
+      <div">
+        <h1 class="title is-1">
+          Text Generator
+        </h1>
+      </div>
+    </div>
+
+    <!--=============== FORM CONTROLS ===============-->
+    <div class="box content-tab" id="generate">
+      <div class="columns is-centered">
+        <div class="container">
+
+          <!--=============== FORM COLUMN 1 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <!--<div class="box">-->
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. Starts the generated text with the specified text. Starts the generated text with the specified text.</h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 2 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 3 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 4 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text Prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                    </div>
+                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM CONTROLS ===============-->
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+
+<!--======================= CUSTOM JAVASCRIPT ====================================-->
+
+<script>
+  var ctx = document.getElementById('authorBar');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [['Robert', 'Jordan'],
+      ['Steven', 'Erikson'],
+      ['George', 'R. R. Martin'], ['Brandon', 'Sanderson'],
+      ['Stephen', 'King'], ['J. K.', 'Rowling'],
+      ['Tad', 'Williams'],
+      ['Stephen', 'R. Lawhead'],
+      ['Patrick', 'Rothfuss'],
+      ['J. R. R.', 'Tolkien'],
+      ['Christopher', 'Paolini'],
+      ['Joe', 'Abercrombie'],
+      ['David', 'Eddings'],
+      ['Scott', 'Bakker'],
+      ['Gene', 'Wolfe'],
+      ['Guy', 'Gavriel Kay'],
+      ['Garth', 'Nix'],
+      ['C. S.', 'Lewis'],
+      ['Ursula', 'K Le Guin'],
+      ['Fred', 'Saberhagen']],
+      datasets: [{
+        label: '# of Votes',
+        data: [4074024, 3263937, 1745214, 1384299, 1342947,
+         1104023, 1073825, 936893, 653713, 636241, 629820,
+         619176, 528051, 510086, 388113, 373211, 330083,
+         319105, 242246, 173849],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
+
+
+<!-- Max Wolfe's custom JS for form controls -->
+<script type="text/javascript">
+  $(function() {
+    $('#gen-form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "https://gpt2-wpmqib3yta-uc.a.run.app",
+        dataType: "json",
+        data: JSON.stringify(getInputValues()),
+        beforeSend: function(data) {
+          $('#generate-text').addClass("is-loading");
+          $('#generate-text').prop("disabled", true);
+        },
+        success: function(data) {
+          $('#generate-text').removeClass("is-loading");
+          $('#generate-text').prop("disabled", false);
+          $('#tutorial').remove();
+          var gentext = data.text;
+          if ($("#prefix").length & $("#prefix").val() != '') {
+            var pattern = new RegExp('^' + $("#prefix").val(), 'g');
+            var gentext = gentext.replace(pattern, '<strong>' + $("#prefix").val() + '</strong>');
+          }
+
+          var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
+          var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
+          $(html).appendTo('#model-output').hide().fadeIn("slow");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          $('#generate-text').removeClass("is-loading");
+          $('#generate-text').prop("disabled", false);
+          $('#tutorial').remove();
+          var html = '<div class="gen-box warning">There was an error generating the text! Please try again!</div><div class="gen-border"></div>';
+          $(html).appendTo('#model-output').hide().fadeIn("slow");
+        }
+      });
+    });
+  });
+
+  function getInputValues() {
+    var inputs = {};
+    $("textarea, input").each(function() {
+      inputs[$(this).attr('id')] = $(this).val();
+    });
+    return inputs;
+  }
+</script>
+
+<!-- Custom Javascript for generating line by line text + typewriting -->
+
+<script type="text/javascript">
+  // set up text to print, each item in array is new line
+  var aText = new Array(
+    //"                                     ",
+    "Fantasy is a text generator based on OpenAI's small GPT2 model and is further trained and finetuned on the text of fantasy novels. Change the parameters on the right to generate interesting text."
+  );
+  var iSpeed = 17; // time delay of print out
+  var iIndex = 0; // start printing array at this posision
+  var iArrLength = aText[0].length; // the length of the text array
+  var iScrollAt = 20; // start scrolling up at this many lines
+
+  var iTextPos = 0; // initialise text position
+  var sContents = ''; // initialise contents variable
+  var iRow; // initialise current row
+
+  function typewriter() {
+    sContents = ' ';
+    iRow = Math.max(0, iIndex - iScrollAt);
+    var destination = document.getElementById("typedtext");
+
+    while (iRow < iIndex) {
+      sContents += aText[iRow++] + '<br />';
+    }
+    destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "|";
+    if (iTextPos++ == iArrLength) {
+      iTextPos = 0;
+      iIndex++;
+      if (iIndex != aText.length) {
+        iArrLength = aText[iIndex].length;
+        setTimeout("typewriter()", 500);
+      }
+    } else {
+      setTimeout("typewriter()", iSpeed);
+    }
+  }
+
+
+  typewriter();
+</script>
+
+<script>
+  var ctx = document.getElementById('myChart');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
+
+
+<script>
+  var options = {
+    series: [{
+      name: 'TEAM A',
+      type: 'column',
+      data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
+    }, {
+      name: 'TEAM B',
+      type: 'area',
+      data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
+    }, {
+      name: 'TEAM C',
+      type: 'line',
+      data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+    }],
+    chart: {
+      height: 350,
+      type: 'line',
+      stacked: false,
+    },
+    stroke: {
+      width: [0, 2, 5],
+      curve: 'smooth'
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '50%'
+      }
+    },
+
+    fill: {
+      opacity: [0.85, 0.25, 1],
+      gradient: {
+        inverseColors: false,
+        shade: 'light',
+        type: "vertical",
+        opacityFrom: 0.85,
+        opacityTo: 0.55,
+        stops: [0, 100, 100, 100]
+      }
+    },
+    labels: ['01/01/2003', '02/01/2003', '03/01/2003', '04/01/2003', '05/01/2003', '06/01/2003', '07/01/2003',
+      '08/01/2003', '09/01/2003', '10/01/2003', '11/01/2003'
+    ],
+    markers: {
+      size: 0
+    },
+    xaxis: {
+      type: 'datetime'
+    },
+    yaxis: {
+      title: {
+        text: 'Points',
+      },
+      min: 0
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+      y: {
+        formatter: function(y) {
+          if (typeof y !== "undefined") {
+            return y.toFixed(0) + " points";
+          }
+          return y;
+
+        }
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
+</script>
+
+</html>

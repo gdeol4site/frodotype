@@ -25,8 +25,19 @@ a { color: black; text-decoration: none; }
   }
 }
 
-.blob-gen {
-  
+/*Color Palette*/
+/* bulma-sea  : #00d1b2 | 	rgb(0, 209, 178)
+/* bulma-coral: #ff3860 |   rgb(255, 56, 96)
+/* bulma-gold:  #ffdd57 |   rgb(255, 221, 87)
+
+/* bulma-green: #48c774 |   rgb(72, 199, 116)
+/* bulma-blue : #ff3860 |   rgb(255, 56, 96)
+/* bulma-coral: #ff3860 |   rgb(255, 56, 96)
+
+
+.title-padding{
+  padding-top: 1.25rem;
+  padding-bottom: 6.5rem;
 }
 
 .typed {

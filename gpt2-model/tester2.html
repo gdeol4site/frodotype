@@ -944,68 +944,177 @@
 
   <!--=============== SECTION 4: DASHBOARD ===============-->
 
-<!--  <section class="is-fullheight" id="charts">
-    <div class="container title-padding">
-      <h1 class="title is-1">
-        Visualizing the Data
-      </h1>
-    </div>
-    <! =============== BEGIN GRAPH ROW ===============-->
+  <section class="is-fullheight" id="charts">
 
+        <div class="container title-padding">
+          <h1 class="title is-1">
+            Visualizing the Data
+          </h1>
+        </div>
 
+    <!--=============== BEGIN GRAPH ROW ===============-->
 
     <div class="columns is-multiline is-centered" style="height: auto !important;">
 
-      <!--CHART 1-->
+    <!--=========================================
+        beginning of bar chart for word-count
+        ========================================= -->
 
       <div class="column is-10">
-        <article class="message is-dark">
+        <div class="box">
+        <article >
           <div class="message-header">
-            <p>Chart</p>
+            <p style="margin: 0 auto;">Word Count by Author </p>
           </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 365px;">
-              <canvas id="authorBar" width="800" height="285"> </canvas>
+          <div style="position: relative;">
+            <div style="width: 100%; min-height:100%;">
+              <canvas id="word-count" width="640px" height="360px"> </canvas>
             </div>
           </div>
         </article>
       </div>
     </div>
 
-      <div class="column is-4">
-        <article class="message is-dark">
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-10">
+        <div class="box">
+        <article>
           <div class="message-header">
-            <p>Chart</p>
+            <p style="margin: 0 auto;"> Total Number of Words by Author & Average Length per Book</p>
           </div>
           <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 365px;">
-              <div id="chart"> </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!--CHART 2-->
-
-      <div class="column is-4">
-        <article class="message is-dark">
-          <div class="message-header">
-            <p>Chart</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 365px;">
-              <canvas id="myChart" width="400" height="400"> </canvas>
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="book-size" width="640px" height="480px"> </canvas>
             </div>
           </div>
         </article>
       </div>
     </div>
 
-    <!--=============== END GRAPH ROW ===============-->
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
 
-  </section> -->
+      <div class="column is-6">
+       <div class="box">
+        <article>
+          <div class="message-header">
+            <p style="margin: 0 auto;">Count of Series Totals for the top 20 Names</p>
+          </div>
+          <div class="message-body" style="position: relative;">
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="seriesbar" width="640px" height="480px"> </canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+       <div class="box">
+        <article>
+          <div class="message-header">
+            <p style="margin: 0 auto;">Top 20 Names</p>
+          </div>
+          <div class="message-body" style="position: relative;">
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="namesbar" width="640px" height="480px"> </canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+        <div class="box">
+        <article>
+          <div class="message-header">
+            <p style="margin: 0 auto;">Top 10 Six Letter words by Frequency</p>
+          </div>
+          <div class="message-body" style="position: relative;">
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="bubble-six" width="640px" height="480px"> </canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+        <div class="box">
+        <article>
+          <div class="message-header">
+            <p style="margin: 0 auto;">Top 10 Seven Letter words by Frequency</p>
+          </div>
+          <div class="message-body" style="position: relative;">
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="bubble-seven" width="640px" height="480px"> </canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+        <div class="box">
+        <article>
+          <div class="message-header">
+            <p style="margin: 0 auto;">Top 10 Eight Letter words by Frequency</p>
+          </div>
+          <div class="message-body" style="position: relative;">
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="bubble-eight" width="640px" height="480px"> </canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+        <div class="box">
+        <article>
+          <div class="message-header">
+            <p style="margin: 0 auto;">Top 10 Nine Letter words by Frequency</p>
+          </div>
+          <div class="message-body" style="position: relative;">
+            <div style="width: 100%; min-height: 100%;">
+              <canvas id="bubble-nine" width="640px" height="480px"> </canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+
+    </div>
+
+  </section>
 
 </body>
+<script type="text/javascript" src="charts.js"></script>
 
 <!--======================= CUSTOM JAVASCRIPT ====================================-->
 
