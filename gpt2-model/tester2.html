@@ -22,34 +22,34 @@
   <!--===================================================================================================-->
 </head>
 
-<body class="has-navbar-fixed-top">
+<body class="has-navbar-fixed-top svg-bg">
 
 
   <!--=============== SECTION 1: LANDING ===============-->
 
-  <section class="hero section is-fullheight shire">
+  <section class="hero is-fullheight shire">
 
     <!--=============== NAVBAR ===============-->
-<div class="hero-head">
-    <nav class="level navbar is-primary is-fixed-top ">
-      <h5 class="level-item has-text-centered">
-        <a href="#intro" class="link is-info">Home</a>
-      </h5>
-      <h5 class="level-item has-text-centered">
-        <a href="#generator" class="link is-info">Generate Text!!1</a>
-      </h5>
-      <h5 class="level-item has-text-centered">
+    <div class="hero-head">
+      <nav class="level navbar is-primary is-fixed-top" style="padding-top: 0.75rem; background-color: #ffffff">
+        <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
+          <a href="#intro" class="link is-info">Home</a>
+        </h5>
+        <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
+          <a href="#generator" class="link is-info">Generate Text!!1</a>
+        </h5>
+        <!--<h5 class="level-item has-text-centered">
         <img src="typewriter.svg" alt="Generate Text" style="height: 60px;">
         <a class="link is-info"></a>
-      </h5>
-      <h5 class="level-item has-text-centered">
-        <a href="#charts" class="link is-info">Data Visualization</a>
-      </h5>
-      <h5 class="level-item has-text-centered">
-        <a href="#data" class="link is-info">Data</a>
-      </h5>
-    </nav>
-  </div>
+      </h5> -->
+        <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
+          <a href="#charts" class="link is-info">Data Visualization</a>
+        </h5>
+        <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
+          <a href="#data" class="link is-info">Data</a>
+        </h5>
+      </nav>
+    </div>
 
     <!--=============== INTRO ===============-->
 
@@ -65,9 +65,16 @@
         </div>
       </div>
     </div>
-</section>
-    <!--=============== DOWN BUTTON ===============-->
-<!--
+    <div class="wave-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 245">
+        <path fill="white" fill-opacity="1"
+          d="M0,192L60,202.7C120,213,240,235,360,208C480,181,600,107,720,69.3C840,32,960,32,1080,26.7C1200,21,1320,11,1380,5.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+  <!--=============== DOWN BUTTON ===============-->
+  <!--
     <div class="column is-2 is-offset-5">
       <div class="arrow bounce">
         <a class="fa fa-arrow-down fa-3x" href="#"></a>
@@ -78,15 +85,19 @@
 -->
   <!--=============== SECTION 2: TEXT GENERATION ===============-->
 
-  <section class="section is-fullheight" id="generator">
-    <div class="container title-padding">
-      <h1 class="title is-1">
-        Generate Text
-      </h1>
-    </div>
 
+  <section class="is-fullheight" id="generator">
+    <div class="wave-container" style="height:100%; width:100%">
+      <h1> &nbsp; </h1>
+      <p class="wt-title">generate text!</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
+        <path fill="white" fill-opacity="1"
+          d="M0,32L30,53.3C60,75,120,117,180,144C240,171,300,181,360,186.7C420,192,480,192,540,208C600,224,660,256,720,229.3C780,203,840,117,900,106.7C960,96,1020,160,1080,208C1140,256,1200,288,1260,298.7C1320,309,1380,299,1410,293.3L1440,288L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+        </path>
+      </svg>
+    </div>
     <!--=============== FORM CONTROLS ===============-->
-    <div class="box card-5 content-tab" id="generate">
+    <div class="section" id="generate">
       <div class="columns is-centered">
         <div class="container">
 
@@ -105,11 +116,11 @@
               <div class="column">
                 <form id="gen-form">
                   <div class="field">
-                    <label class="label">Text Prompt</label>
+                    <label class="label">Text prompt</label>
                     <div class="control">
-                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="1"></textarea>
                     </div>
-                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    <!-- optional box subtext <p class="subtitle is-6"> Optional: max 500 characters </p> -->
                   </div>
                 </form>
               </div>
@@ -122,19 +133,19 @@
             <div class="columns is-centered">
               <div class="column">
                 <div class="container">
-                  <label class="label">Text Prompt</label>
-                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  <label class="label">Generated length</label>
+                  <h3 class="subtitle is-6"> Length of the text in tokens to generate. (max: 1023) </h3>
                 </div>
               </div>
               <!--INPUT FORM -->
               <div class="column">
                 <form id="gen-form">
                   <div class="field">
-                    <label class="label">Text Prompt</label>
+                    <label class="label">Generated length</label>
                     <div class="control">
-                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      <input id="length" class="input" type="text" placeholder="Text input" value="100">
                     </div>
-                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    <!-- <p class="subtitle is-6"> max: 1023 </p> -->
                   </div>
                 </form>
               </div>
@@ -147,19 +158,19 @@
             <div class="columns is-centered">
               <div class="column">
                 <div class="container">
-                  <label class="label">Text Prompt</label>
-                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  <label class="label">Temperature</label>
+                  <h3 class="subtitle is-6"> Controls the generated text "creativity." (the higher the temperature, the more creative). </h3>
                 </div>
               </div>
               <!--INPUT FORM -->
               <div class="column">
                 <form id="gen-form">
                   <div class="field">
-                    <label class="label">Text Prompt</label>
+                    <label class="label">Temperature</label>
                     <div class="control">
-                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
                     </div>
-                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    <!-- <p class="subtitle is-6">0 - 1.0 </p> -->
                   </div>
                 </form>
               </div>
@@ -172,19 +183,19 @@
             <div class="columns is-centered">
               <div class="column">
                 <div class="container">
-                  <label class="label">Text Prompt</label>
-                  <h3 class="subtitle is-6"> Starts the generated text with the specified text. </h3>
+                  <label class="label">Top k</label>
+                  <h3 class="subtitle is-6"> Constrains the generated text tokens to the top k possibilities. (set to 0 to disable) </h3>
                 </div>
               </div>
               <!--INPUT FORM -->
               <div class="column">
                 <form id="gen-form">
                   <div class="field">
-                    <label class="label">Text Prompt</label>
+                    <label class="label">Top k</label>
                     <div class="control">
-                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
+                      <input id="top_k" class="input" type="text" placeholder="40" value="40">
                     </div>
-                    <h5 class="help">Starts the generated text with the specified prompt. <em>(Optional: max 500 characters)</em></h5>
+                    <!-- <p class="subtitle is-6">set to 0 to disable </p> -->
                   </div>
                 </form>
               </div>
@@ -195,21 +206,64 @@
 
         </div>
       </div>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <div class="buttons" style="padding-left: 35%;">
+            <span class="control">
+              <button type="submit" name="submit" id="generate-text" class="button is-link">
+                <span class="icon">
+                  <i class="fas fa-md fa-pen"></i>
+                </span><span>Generate Text!</span></button>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <div class="columns" style="padding-top: 1.5rem;">
+      <div class="column is-6 is-offset-3">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              Generated text
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Text appears here.
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class="wave-container-coral">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 330">
+        <path fill="#ffffff" fill-opacity="1"
+          d="M0,96L21.8,133.3C43.6,171,87,245,131,282.7C174.5,320,218,320,262,272C305.5,224,349,128,393,106.7C436.4,85,480,139,524,154.7C567.3,171,611,149,655,160C698.2,171,742,213,785,218.7C829.1,224,873,192,916,202.7C960,213,1004,267,1047,272C1090.9,277,1135,235,1178,218.7C1221.8,203,1265,213,1309,218.7C1352.7,224,1396,224,1418,224L1440,224L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z">
+        </path>
+      </svg>
+    </div>
   </section>
 
   <!--=============== SECTION 3: DATA TABLE ===============-->
 
   <section id="data">
-    <div class="container title-padding">
-      <h1 class="title is-1">
-        Books & Authors
-      </h1>
+    <div class="wave-container-coral">
+      <h1> &nbsp; </h1>
+      <p class="title wt-title">books & authors.</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 305">
+        <path fill="white" fill-opacity="1"
+          d="M0,32L30,53.3C60,75,120,117,180,144C240,171,300,181,360,186.7C420,192,480,192,540,208C600,224,660,256,720,229.3C780,203,840,117,900,106.7C960,96,1020,160,1080,208C1140,256,1200,288,1260,298.7C1320,309,1380,299,1410,293.3L1440,288L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+        </path>
+      </svg>
     </div>
     <div class="columns">
       <div class="column is-8 is-offset-2">
-        <div class="box card-5">
+        <div class="box">
 
           <!--TABLE HEADER-->
 
@@ -939,41 +993,49 @@
         </div>
       </div>
     </div>
-
+    <div class="wave-container-yellow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="white" fill-opacity="1" d="M0,224L80,197.3C160,171,320,117,480,90.7C640,64,800,64,960,69.3C1120,75,1280,85,1360,90.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+        </path>
+      </svg>
+    </div>
   </section>
 
   <!--=============== SECTION 4: DASHBOARD ===============-->
 
   <section class="is-fullheight" id="charts">
-
-        <div class="container title-padding">
-          <h1 class="title is-1">
-            Visualizing the Data
-          </h1>
-        </div>
+    <div class="wave-container-yellow">
+      <p class="title wt-title">visualizing the data.</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="white" fill-opacity="1"
+          d="M0,128L40,128C80,128,160,128,240,117.3C320,107,400,85,480,80C560,75,640,85,720,85.3C800,85,880,75,960,112C1040,149,1120,235,1200,256C1280,277,1360,235,1400,213.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+        </path>
+      </svg>
+    </div>
+    <!-- <div class="container title-padding"> add this  back in later possibly -->
 
     <!--=============== BEGIN GRAPH ROW ===============-->
 
     <div class="columns is-multiline is-centered" style="height: auto !important;">
 
-    <!--=========================================
+      <!--=========================================
         beginning of bar chart for word-count
         ========================================= -->
 
       <div class="column is-10">
         <div class="box">
-        <article >
-          <div class="message-header">
-            <p style="margin: 0 auto;">Word Count by Author </p>
-          </div>
-          <div style="position: relative;">
-            <div style="width: 100%; min-height:100%;">
-              <canvas id="word-count" width="640px" height="360px"> </canvas>
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Word Count by Author </p>
             </div>
-          </div>
-        </article>
+            <div style="position: relative;">
+              <div style="width: 100%; min-height:100%;">
+                <canvas id="word-count" width="640px" height="360px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
 
       <!--=========================================
           beginning of bar chart for word-count
@@ -981,56 +1043,18 @@
 
       <div class="column is-10">
         <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;"> Total Number of Words by Author & Average Length per Book</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="book-size" width="640px" height="480px"> </canvas>
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;"> Total Number of Words by Author & Average Length per Book</p>
             </div>
-          </div>
-        </article>
-      </div>
-    </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-       <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;">Count of Series Totals for the top 20 Names</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="seriesbar" width="640px" height="480px"> </canvas>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="book-size" width="640px" height="480px"> </canvas>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-       <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;">Top 20 Names</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="namesbar" width="640px" height="480px"> </canvas>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
 
       <!--=========================================
           beginning of bar chart for word-count
@@ -1038,18 +1062,18 @@
 
       <div class="column is-6">
         <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;">Top 10 Six Letter words by Frequency</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="bubble-six" width="640px" height="480px"> </canvas>
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Count of Series Totals for the top 20 Names</p>
             </div>
-          </div>
-        </article>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="seriesbar" width="640px" height="480px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
 
       <!--=========================================
           beginning of bar chart for word-count
@@ -1057,18 +1081,18 @@
 
       <div class="column is-6">
         <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;">Top 10 Seven Letter words by Frequency</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="bubble-seven" width="640px" height="480px"> </canvas>
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Top 20 Names</p>
             </div>
-          </div>
-        </article>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="namesbar" width="640px" height="480px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
 
       <!--=========================================
           beginning of bar chart for word-count
@@ -1076,18 +1100,18 @@
 
       <div class="column is-6">
         <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;">Top 10 Eight Letter words by Frequency</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="bubble-eight" width="640px" height="480px"> </canvas>
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Top 10 Six Letter words by Frequency</p>
             </div>
-          </div>
-        </article>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="bubble-six" width="640px" height="480px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
 
       <!--=========================================
           beginning of bar chart for word-count
@@ -1095,22 +1119,59 @@
 
       <div class="column is-6">
         <div class="box">
-        <article>
-          <div class="message-header">
-            <p style="margin: 0 auto;">Top 10 Nine Letter words by Frequency</p>
-          </div>
-          <div class="message-body" style="position: relative;">
-            <div style="width: 100%; min-height: 100%;">
-              <canvas id="bubble-nine" width="640px" height="480px"> </canvas>
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Top 10 Seven Letter words by Frequency</p>
             </div>
-          </div>
-        </article>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="bubble-seven" width="640px" height="480px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+        <div class="box">
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Top 10 Eight Letter words by Frequency</p>
+            </div>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="bubble-eight" width="640px" height="480px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!--=========================================
+          beginning of bar chart for word-count
+          ========================================= -->
+
+      <div class="column is-6">
+        <div class="box">
+          <article>
+            <div class="message-header">
+              <p style="margin: 0 auto;">Top 10 Nine Letter words by Frequency</p>
+            </div>
+            <div class="message-body" style="position: relative;">
+              <div style="width: 100%; min-height: 100%;">
+                <canvas id="bubble-nine" width="640px" height="480px"> </canvas>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
 
 
     </div>
-
   </section>
 
 </body>
@@ -1123,30 +1184,35 @@
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: [['Robert', 'Jordan'],
-      ['Steven', 'Erikson'],
-      ['George', 'R. R. Martin'], ['Brandon', 'Sanderson'],
-      ['Stephen', 'King'], ['J. K.', 'Rowling'],
-      ['Tad', 'Williams'],
-      ['Stephen', 'R. Lawhead'],
-      ['Patrick', 'Rothfuss'],
-      ['J. R. R.', 'Tolkien'],
-      ['Christopher', 'Paolini'],
-      ['Joe', 'Abercrombie'],
-      ['David', 'Eddings'],
-      ['Scott', 'Bakker'],
-      ['Gene', 'Wolfe'],
-      ['Guy', 'Gavriel Kay'],
-      ['Garth', 'Nix'],
-      ['C. S.', 'Lewis'],
-      ['Ursula', 'K Le Guin'],
-      ['Fred', 'Saberhagen']],
+      labels: [
+        ['Robert', 'Jordan'],
+        ['Steven', 'Erikson'],
+        ['George', 'R. R. Martin'],
+        ['Brandon', 'Sanderson'],
+        ['Stephen', 'King'],
+        ['J. K.', 'Rowling'],
+        ['Tad', 'Williams'],
+        ['Stephen', 'R. Lawhead'],
+        ['Patrick', 'Rothfuss'],
+        ['J. R. R.', 'Tolkien'],
+        ['Christopher', 'Paolini'],
+        ['Joe', 'Abercrombie'],
+        ['David', 'Eddings'],
+        ['Scott', 'Bakker'],
+        ['Gene', 'Wolfe'],
+        ['Guy', 'Gavriel Kay'],
+        ['Garth', 'Nix'],
+        ['C. S.', 'Lewis'],
+        ['Ursula', 'K Le Guin'],
+        ['Fred', 'Saberhagen']
+      ],
       datasets: [{
         label: '# of Votes',
         data: [4074024, 3263937, 1745214, 1384299, 1342947,
-         1104023, 1073825, 936893, 653713, 636241, 629820,
-         619176, 528051, 510086, 388113, 373211, 330083,
-         319105, 242246, 173849],
+          1104023, 1073825, 936893, 653713, 636241, 629820,
+          619176, 528051, 510086, 388113, 373211, 330083,
+          319105, 242246, 173849
+        ],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
