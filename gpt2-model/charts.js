@@ -687,7 +687,7 @@ new Chart(document.getElementById("seriesbar"), {
     datasets: [{
       label: "My First Dataset",
       data: [44374, 24662, 19281, 7856, 6668, 6033, 4045, 3798],
-      backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)", "rgba(3, 206, 164)", "rgba(153, 102, 255)", "rgba(75, 192, 192)", "rgba(200, 206, 86)", "rgba(135, 43, 98)"]
+      backgroundColor: ["rgb(216,164,127)", "rgb(49,8,31)", "rgb(107,15,26)", "rgb(15,139,141)", "rgb(rgb(236,154,41)", "rgb(234,43,31)", "rgb(8,65,92)", "rgb(33,41,92)"]
     }]
   },
 });
