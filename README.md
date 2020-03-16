@@ -1,3 +1,26 @@
+# Introduction: Frodotype - a fantasy flavoured text generator
+======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Putting the final text file together:
 
 1. Concatenate the files:
