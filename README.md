@@ -1,4 +1,5 @@
-# Introduction: Frodotype - a fantasy flavoured text generator
+# Introduction: Frodotype 
+##  __Frodotype - a fantasy flavoured text generator__
 ======
 
 
