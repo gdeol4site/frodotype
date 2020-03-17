@@ -12,12 +12,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap" rel="stylesheet">
   <!--===================================================================================================-->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
   <script type="text/javascript" src="chartjs-plugin-datalabels.js"></script>
   <script type="text/javascript" src="chartjs-plugin-colorschemes.js"></script>
   <script type="text/javascript" src="charts.js"></script>
   <script type="text/javascript" src="functions.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
 
   <!--===================================================================================================-->
 </head>
@@ -34,13 +37,9 @@
       <nav class="level navbar is-primary is-fixed-top" style="padding-top: 0.75rem; background-color: #ffffff">
         <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
           <a href="#intro" class="link is-info">Home</a>
-          &nbsp;
-            <i class="em-svg em-european_castle"></i>
         </h5>
         <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
           <a href="#generator" class="link is-info">Generate Text</a>
-          &nbsp;
-            <i class="em-svg em-scroll"></i>
         </h5>
         <!-5-<h5 class="level-item has-text-centered">
         <img src="typewriter.svg" alt="Generate Text" style="height: 60px;">
@@ -48,14 +47,9 @@
       </h5>
         <h5 class="level-item has-text-centered subtitle is-5" style="padding-top: 0.75rem;">
           <a href="#charts" class="link is-info">Data Visualization</a>
-          &nbsp;
-            <i class="em-svg em-pie"></i>
-        </h5>
         </h5>
         <h5 class="level-item has-text-centered subtitle is-5">
           <a href="#data" class="link is-info">Data</a>
-          &nbsp;
-            <i class="em-svg em-abacus"></i>
         </h5>
       </nav>
     </div> -->
@@ -73,6 +67,9 @@
           <div id="navbarMenuHeroA" class="navbar-menu level">
             <a class="navbar-item" style="color: #000000;">
               Home
+              <span class="icon has-text-danger">
+                <i> <img src="home.svg" alt=""> </i>
+              </span>
             </a>
             <a class="navbar-item" style="color: #000000;">
               Examples
@@ -117,116 +114,127 @@
 
   </section>
 -->
-<!--=============== FORM CONTROLS ===============-->
-<div class="section" id="generate">
-<div class="columns is-centered">
-  <div class="container">
-
-    <!--=============== FORM COLUMN 1 ===============-->
-    <!--INFO TEXT -->
-    <div class="column">
-      <!--<div class="box">-->
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="container has-text-justified">
-            <label class="label">Text Prompt</label>
-            <h3 class="subtitle is-6"> A text prompt acts as a seed for the modified GPT2 model. This model computes the probability of the next word given the contents of the prompt. This is a simple probability distribution over a sequence of
-              words.</h3>
-          </div>
-        </div>
-        <!--INPUT FORM -->
-        <div class="column">
-          <form id="gen-form">
-            <div class="field">
-              <label class="label">Text prompt</label>
-              <div class="control">
-                <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="1"></textarea>
-              </div>
-              <!-- optional box subtext <p class="subtitle is-6"> Optional: max 500 characters </p> -->
-            </div>
-          </form>
-        </div>
-      </div>
+  <!--=============== FORM CONTROLS ===============-->
+  <section class="is-fullheight" id="generator">
+    <div class="wave-container" style="height:100%; width:100%">
+      <h1> &nbsp; </h1>
+      <p class="wt-title">generate text <i class="em-svg em-lower_left_ballpoint_pen" aria-role="presentation" aria-label=""></i></p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
+        <path fill="white" fill-opacity="1"
+          d="M0,32L30,53.3C60,75,120,117,180,144C240,171,300,181,360,186.7C420,192,480,192,540,208C600,224,660,256,720,229.3C780,203,840,117,900,106.7C960,96,1020,160,1080,208C1140,256,1200,288,1260,298.7C1320,309,1380,299,1410,293.3L1440,288L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+        </path>
+      </svg>
     </div>
 
-    <!--=============== FORM COLUMN 2 ===============-->
-    <!--INFO TEXT -->
-    <div class="column">
+    <div class="section" id="generate">
       <div class="columns is-centered">
-        <div class="column">
-          <div class="container has-text-justified">
-            <label class="label">Generated length</label>
-            <h3 class="subtitle is-6"> This is the length of the generated text and can generate a max of 1023 words. The maximum length generation can take up to two minutes. </h3>
-          </div>
-        </div>
-        <!--INPUT FORM -->
-        <div class="column">
-          <form id="gen-form">
-            <div class="field">
-              <label class="label">Generated length</label>
-              <div class="control">
-                <input id="length" class="input" type="text" placeholder="Text input" value="100">
-              </div>
-              <!-- <p class="subtitle is-6"> max: 1023 </p> -->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+        <div class="container">
 
-    <!--=============== FORM COLUMN 3 ===============-->
-    <!--INFO TEXT -->
-    <div class="column">
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="container has-text-justified">
-            <label class="label">Temperature</label>
-            <!-- https://cs.stackexchange.com/questions/79241/what-is-temperature-in-lstm-and-neural-networks-generally -->
-            <h3 class="subtitle is-6"> Temperature is used to control the randomness of predictions. When the temperature approaches 1, predictions become less confident and more "creative".
-              Temperature therefore increases the sensitivity to low probability candidates.</h3>
-          </div>
-        </div>
-        <!--INPUT FORM -->
-        <div class="column">
-          <form id="gen-form">
-            <div class="field">
-              <label class="label">Temperature</label>
-              <div class="control">
-                <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
+          <!--=============== FORM COLUMN 1 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <!--<div class="box">-->
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container has-text-justified">
+                  <label class="label">Text Prompt</label>
+                  <h3 class="subtitle is-6"> A text prompt acts as a seed for the modified GPT2 model. This model computes the probability of the next word given the contents of the prompt. This is a simple probability distribution over a sequence of
+                    words.</h3>
+                </div>
               </div>
-              <!-- <p class="subtitle is-6">0 - 1.0 </p> -->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!--=============== FORM COLUMN 4 ===============-->
-    <!--INFO TEXT -->
-    <div class="column">
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="container">
-            <label class="label">Top k</label>
-            <h3 class="subtitle is-6"> Constrains the generated text tokens to the top k possibilities. (set to 0 to disable) </h3>
-          </div>
-        </div>
-        <!--INPUT FORM -->
-        <div class="column">
-          <form id="gen-form">
-            <div class="field">
-              <label class="label">Top k</label>
-              <div class="control">
-                <input id="top_k" class="input" type="text" placeholder="40" value="40">
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Text prompt</label>
+                    <div class="control">
+                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="1"></textarea>
+                    </div>
+                    <!-- optional box subtext <p class="subtitle is-6"> Optional: max 500 characters </p> -->
+                  </div>
+                </form>
               </div>
-              <!-- <p class="subtitle is-6">set to 0 to disable </p> -->
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
+          </div>
 
-    <!--=============== FORM CONTROLS ===============-->
+          <!--=============== FORM COLUMN 2 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container has-text-justified">
+                  <label class="label">Generated length</label>
+                  <h3 class="subtitle is-6"> This is the length of the generated text and can generate a max of 1023 words. The maximum length generation can take up to two minutes. </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Generated length</label>
+                    <div class="control">
+                      <input id="length" class="input" type="text" placeholder="Text input" value="100">
+                    </div>
+                    <!-- <p class="subtitle is-6"> max: 1023 </p> -->
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 3 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container has-text-justified">
+                  <label class="label">Temperature</label>
+                  <!-- https://cs.stackexchange.com/questions/79241/what-is-temperature-in-lstm-and-neural-networks-generally -->
+                  <h3 class="subtitle is-6"> Temperature is used to control the randomness of predictions. When the temperature approaches 1, predictions become less confident and more "creative".
+                    Temperature therefore increases the sensitivity to low probability candidates.</h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Temperature</label>
+                    <div class="control">
+                      <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
+                    </div>
+                    <!-- <p class="subtitle is-6">0 - 1.0 </p> -->
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM COLUMN 4 ===============-->
+          <!--INFO TEXT -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="container">
+                  <label class="label">Top k</label>
+                  <h3 class="subtitle is-6"> Constrains the generated text tokens to the top k possibilities. (set to 0 to disable) </h3>
+                </div>
+              </div>
+              <!--INPUT FORM -->
+              <div class="column">
+                <form id="gen-form">
+                  <div class="field">
+                    <label class="label">Top k</label>
+                    <div class="control">
+                      <input id="top_k" class="input" type="text" placeholder="40" value="40">
+                    </div>
+                    <!-- <p class="subtitle is-6">set to 0 to disable </p> -->
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--=============== FORM CONTROLS ===============-->
 
         </div>
       </div>
@@ -278,7 +286,7 @@
 
   <section class="is-fullheight" id="charts">
     <div class="wave-container-coral">
-      <p class="title wt-title">visualizing the data.</p>
+      <p class="title wt-title">visualizing the data. <i class="em-svg em-bar_chart" aria-role="presentation" aria-label="BAR CHART"></i> </p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="white" fill-opacity="1"
           d="M0,128L40,128C80,128,160,128,240,117.3C320,107,400,85,480,80C560,75,640,85,720,85.3C800,85,880,75,960,112C1040,149,1120,235,1200,256C1280,277,1360,235,1400,213.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
@@ -311,13 +319,13 @@
       </div>
 
       <!--=========================================
-          beginning of bar chart for word-count
+          beginning of line chart for word-count and words per book
           ========================================= -->
 
       <div class="column is-10">
         <div class="box">
           <article>
-            <div class="message-header">
+            <div class="message-header" style="background-color: #FF7F50;">
               <p style="margin: 0 auto;"> Total Number of Words by Author & Average Length per Book</p>
             </div>
             <div class="message-body" style="position: relative;">
@@ -330,13 +338,13 @@
       </div>
 
       <!--=========================================
-          beginning of bar chart for word-count
+          beginning of donut chart with series name totals
           ========================================= -->
 
       <div class="column is-6">
         <div class="box">
           <article>
-            <div class="message-header">
+            <div class="message-header" style="background-color: rgb(227,26,28);">
               <p style="margin: 0 auto;">Count of Series Totals for the top 20 Names</p>
             </div>
             <div class="message-body" style="position: relative;">
@@ -355,7 +363,7 @@
       <div class="column is-6">
         <div class="box">
           <article>
-            <div class="message-header">
+            <div class="message-header" style="background-color: rgb(17,30,108);">
               <p style="margin: 0 auto;">Top 20 Names</p>
             </div>
             <div class="message-body" style="position: relative;">
@@ -368,7 +376,7 @@
       </div>
 
       <!--=========================================
-          beginning of bar chart for word-count
+          beginning of six-letter bubble chart
           ========================================= -->
 
       <div class="column is-6">
@@ -445,6 +453,16 @@
 
 
     </div>
+
+    <div class="wave-container-coral">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1"
+          d="M0,256L24,250.7C48,245,96,235,144,234.7C192,235,240,245,288,240C336,235,384,213,432,197.3C480,181,528,171,576,170.7C624,171,672,181,720,160C768,139,816,85,864,80C912,75,960,117,1008,154.7C1056,192,1104,224,1152,218.7C1200,213,1248,171,1296,176C1344,181,1392,235,1416,261.3L1440,288L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z">
+        </path>
+      </svg>
+    </div>
+
+
   </section>
 
   <!--=============== SECTION 3: DATA TABLE ===============-->
@@ -452,7 +470,7 @@
   <section id="data">
     <div class="wave-container-coral">
       <h1> &nbsp; </h1>
-      <p class="title wt-title">books & authors.</p>
+      <p class="title wt-title">books & authors.<i class="em-svg em-books" aria-role="presentation" aria-label="BOOKS"></i> </p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 305">
         <path fill="white" fill-opacity="1"
           d="M0,32L30,53.3C60,75,120,117,180,144C240,171,300,181,360,186.7C420,192,480,192,540,208C600,224,660,256,720,229.3C780,203,840,117,900,106.7C960,96,1020,160,1080,208C1140,256,1200,288,1260,298.7C1320,309,1380,299,1410,293.3L1440,288L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
@@ -1191,191 +1209,30 @@
         </div>
       </div>
     </div>
-    <div class="wave-container-yellow">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="white" fill-opacity="1" d="M0,224L80,197.3C160,171,320,117,480,90.7C640,64,800,64,960,69.3C1120,75,1280,85,1360,90.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-        </path>
-      </svg>
-    </div>
-  </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>FrodoType</strong> by <a href="https://www.gurkamal.com">Gurkamal Deol</a>. Using OpenAI's GPT2 and Max Woolf's gpt-2-simple.
+        </p>
+        <p>
+          This app was built with Tensorflow, Google Cloud, Docker, & Bulma CSS.
+        </P>
 
-  <!--=============== SECTION 4: DASHBOARD ===============-->
-
-  <section class="is-fullheight" id="charts">
-    <div class="wave-container-yellow">
-      <p class="title wt-title">visualizing the data.</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="white" fill-opacity="1"
-          d="M0,128L40,128C80,128,160,128,240,117.3C320,107,400,85,480,80C560,75,640,85,720,85.3C800,85,880,75,960,112C1040,149,1120,235,1200,256C1280,277,1360,235,1400,213.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
-        </path>
-      </svg>
-    </div>
-    <!-- <div class="container title-padding"> add this  back in later possibly -->
-
-    <!--=============== BEGIN GRAPH ROW ===============-->
-
-    <div class="columns is-multiline is-centered" style="height: auto !important;">
-
-      <!--=========================================
-        beginning of bar chart for word-count
-        ========================================= -->
-
-      <div class="column is-10">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Word Count by Author </p>
-            </div>
-            <div style="position: relative;">
-              <div style="width: 100%; min-height:100%;">
-                <canvas id="word-count" width="640px" height="360px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
       </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-10">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;"> Total Number of Words by Author & Average Length per Book</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="book-size" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Count of Series Totals for the top 20 Names</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="seriesbar" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Top 20 Names</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="namesbar" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Top 10 Six Letter words by Frequency</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="bubble-six" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Top 10 Seven Letter words by Frequency</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="bubble-seven" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Top 10 Eight Letter words by Frequency</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="bubble-eight" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!--=========================================
-          beginning of bar chart for word-count
-          ========================================= -->
-
-      <div class="column is-6">
-        <div class="box">
-          <article>
-            <div class="message-header">
-              <p style="margin: 0 auto;">Top 10 Nine Letter words by Frequency</p>
-            </div>
-            <div class="message-body" style="position: relative;">
-              <div style="width: 100%; min-height: 100%;">
-                <canvas id="bubble-nine" width="640px" height="480px"> </canvas>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-
-    </div>
+    </footer>
   </section>
 
 </body>
 <script type="text/javascript" src="charts.js"></script>
 
 <!--======================= CUSTOM JAVASCRIPT ====================================-->
+
+<script type="text/javascript">
+  $('.navbar-burger').click(function() {
+    $('#navbarMenuHeroA, .navbar-burger').toggleClass('is-active');
+  });
+</script>
+
 
 <script>
   var ctx = document.getElementById('authorBar');

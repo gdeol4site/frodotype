@@ -1,7 +1,7 @@
 .wave-container {
 
   position: relative;
-  background: #1BBA90;
+  background: #FF7F50;
   color: #FFF;
   text-align: center;
   overflow: hidden;
@@ -14,7 +14,7 @@
 .wave-container-coral {
 
   position: relative;
-  background: #ff3860;
+  background: #006666;
   color: #FFF;
   text-align: center;
   overflow: hidden;
@@ -40,7 +40,7 @@
 .wt-title {
     color: white;
     font-size: 7vw;
-
+    font-family: 'Playfair Display';
 }
 
 svg {
