@@ -556,78 +556,61 @@ var myChart = new Chart(ctx, {
       }, {
         "x": 2425,
         "y": 2,
-        "r": 20
+        "r": 28
       }, {
         "x": 2643,
         "y": 4,
-        "r": 28
+        "r": 30
       }, {
         "x": 2730,
         "y": 16,
-        "r": 30
-      }, {
-        "x": 2766,
-        "y": 32,
         "r": 32
       }, {
-        "x": 2801,
-        "y": 64,
+        "x": 2766,
+        "y": 50,
         "r": 35
       }, {
+        "x": 2801,
+        "y": 100,
+        "r": 30
+      }, {
         "x": 3639,
-        "y": 128,
-        "r": 41
+        "y": 200,
+        "r": 31
       }, {
         "x": 4152,
-        "y": 256,
-        "r": 41
+        "y": 400,
+        "r": 31
       }, {
         "x": 4259,
         "y": 1024,
-        "r": 42.5
+        "r": 34
       }, {
         "x": 4303,
         "y": 2400,
-        "r": 43
+        "r": 35
+      }, , {
+        "x": 4303,
+        "y": 2400,
+        "r": 35
       }, {
-        "x": 18434,
-        "y": 4096,
-        "r": 57
-      }, {
-        "x": 9500,
+        "x": 5000,
         "y": 5000,
         "r": 0
       }],
 
       backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5',
-        'rgba(16, 126, 125, 0.5)',
-        'rgba(189, 191, 9, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-        'rgba(52, 89, 149, 0.5)',
-        'rgba(3, 206, 164, 0.5)',
-        'rgba(251, 77, 61, 0.5)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1',
-        'rgba(16, 126, 125, 1)',
-        'rgba(189, 191, 9, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(52, 89, 149, 1)',
-        'rgba(3, 206, 164, 1)',
-        'rgba(251, 77, 61, 1)'
-      ],
-      borderWidth: 1.5,
+        'rgba(53,255,105, 0.5)',
+        'rgba(68,204,255, 0.5)',
+        'rgba(116,148,234, 0.5)',
+        'rgba(209,56,191, 0.5)',
+        'rgba(245,183,0, 0.5)',
+        'rgba(137,4,61, 0.5)',
+        'rgba(47,230,222, 0.5)',
+        'rgba(255,166,48, 0.5)',
+        'rgba(12,15,10, 0.5)',
+        'rgba(166,52,70, 0.5)'
+      ]
     }, ],
   },
   options: {
@@ -643,7 +626,6 @@ var myChart = new Chart(ctx, {
     plugins: {
       datalabels: {
         align: 'center',
-        offset: '30',
         font: {
           weight: 'bold'
         },
@@ -668,6 +650,9 @@ new Chart(document.getElementById("seriesbar"), {
   data: {
     labels: ["Wheel of Time", "Harry potter", "Dark Tower", "Mistborn", "Inheritance", "Memory, Sorrow, Thorn", "Belgariad", "Pendragon Cycle"],
     datasets: [{
+      datalabels: {
+        display: false
+      },
       label: "My First Dataset",
       data: [44374, 24662, 19281, 7856, 6668, 6033, 4045, 3798],
       backgroundColor: [
@@ -684,7 +669,6 @@ new Chart(document.getElementById("seriesbar"), {
   },
 });
 
-//"Harry", "Rand", "Egwene", "Perrin", "Roland", "Elayne", "Eragon", "Nynaeve", "Simon", "Eddie", "Hermione" , "Elend", "Garion", "Jake", "Arthur" , "Moiraine", "Dumbledore", "Susannah", "Kelsier"
 
 // ==================================================================
 // beginning of bar chart for name count
@@ -696,29 +680,33 @@ new Chart(document.getElementById("namesbar"), {
   data: {
     labels: ["Harry", "Rand", "Egwene", "Perrin", "Roland", "Elayne", "Eragon", "Nynaeve", "Simon", "Eddie", "Hermione", "Elend", "Garion", "Jake", "Arthur", "Moiraine", "Dumbledore", "Susannah", "Kelsier"],
     datasets: [{
+      datalabels: {
+        display: false
+      },
       data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
       fill: false,
 
       //hp="rgba(255, 99, 132, 0.2)", wot="rgba(255, 159, 64, 0.2)", dt="rgba(255, 205, 86, 0.2)", mistborn="rgba(75, 192, 192, 0.2)", intce"rgba(54, 162, 235, 0.2)", mem="rgba(153, 102, 255, 0.2)", belg="rgba(201, 203, 207, 0.2)", pend='rgba(3, 206, 164)', 'rgba(76, 170, 120)'
       backgroundColor: [
-        'rgb(17,30,108)',
-        'rgb(0,142,204)',
-        'rgb(0,142,204)',
-        'rgb(0,142,204)',
-        'rgb(0,128,129)',
-        'rgb(0,142,204)',
-        'rgb(70,130,180)',
-        'rgb(0,142,204)',
-        'rgb(15,82,186)',
-        'rgb(0,128,129)',
-        'rgb(17,30,108)',
-        'rgb(63,234,208)',
-        'rgb(101,147,245)',
-        'rgb(0,128,129)',
-        'rgb(88,139,174)',
-        'rgb(0,142,204)',
-        'rgb(17,30,108)',
-        'rgb(0,128,129)'
+        'rgb(255,237,160)',
+        'rgb(255,247,188)',
+        'rgb(255,247,188)',
+        'rgb(255,247,188)',
+        'rgb(254,217,118)',
+        'rgb(255,247,188)',
+        'rgb(254,178,76)',
+        'rgb(255,247,188)',
+        'rgb(253,141,60)',
+        'rgb(254,217,118)',
+        'rgb(255,237,160)',
+        'rgb(252,78,42)',
+        'rgb(227,26,28)',
+        'rgb(254,217,118)',
+        'rgb(177,0,38)',
+        'rgb(255,247,188)',
+        'rgb(255,237,160)',
+        'rgb(254,217,118)',
+        'rgb(252,78,42)',
       ]
     }]
   },
@@ -733,339 +721,117 @@ new Chart(document.getElementById("namesbar"), {
   }
 });
 
-// ==================================================================
-// beginning of six letter bubble chart
-// ==================================================================
+//Letter PIE chartjs
 
-/* var ctx = document.getElementById('one-bubble').getContext('2d');
-
-var myChart = new Chart(ctx, {
-
-  type: 'bubble',
+// For a pie chart
+new Chart(document.getElementById("myPieChart"), {
+  type: "pie",
   data: {
-    labels: ['', 'moment', 'behind', 'enough', 'turned', 'little', 'though', 'around', 'seemed', 'looked', 'before', ''],
+    labels: ["Wheel of Time", "Harry potter", "Dark Tower", "Mistborn", "Inheritance", "Memory, Sorrow, Thorn", "Belgariad", "Pendragon Cycle"],
     datasets: [{
-      data: [{
-        "x": 1800,
-        "y": 0,
-        "r": 0
+        datalabels: {
+          display: false
+        },
+        label: "My First Dataset",
+        data: [44374, 24662, 19281, 7856, 6668, 6033, 4045, 3798],
+        backgroundColor: [
+          'rgb(255,247,188)',
+          'rgb(255,237,160)',
+          'rgb(254,217,118)',
+          'rgb(254,178,76)',
+          'rgb(253,141,60)',
+          'rgb(252,78,42)',
+          'rgb(227,26,28)',
+          'rgb(177,0,38)'
+        ]
       }, {
-        "x": 16147,
-        "y": 1432,
-        "r": 27
-      }, {
-        "x": 16183,
-        "y": 1475,
-        "r": 27
-      }, {
-        "x": 17080,
-        "y": 1500,
-        "r": 28
-      }, {
-        "x": 18041,
-        "y": 1560,
-        "r": 30
-      }, {
-        "x": 18565,
-        "y": 1600,
-        "r": 31
-      }, {
-        "x": 18586,
-        "y": 1615,
-        "r": 31
-      }, {
-        "x": 20531,
-        "y": 1715,
-        "r": 34
-      }, {
-        "x": 21206,
-        "y": 1760,
-        "r": 35
-      }, {
-        "x": 25488,
-        "y": 2020,
-        "r": 42
-      }, {
-        "x": 31869,
-        "y": 2400,
-        "r": 53
-      }, {
-        "x": 34000,
-        "y": 2600,
-        "r": 0
-      }],
+        datalabels: {
+          display: false
+        },
+        label: "My First Dataset",
+        data: [4000, 2400, , 3004, 3344, 6677, 6473, 1243],
+        backgroundColor: [
+          'rgb(255,247,188)',
+          'rgb(255,237,160)',
+          'rgb(254,217,118)',
+          'rgb(254,178,76)',
+          'rgb(253,141,60)',
+          'rgb(252,78,42)',
+          'rgb(227,26,28)',
+          'rgb(177,0,38)'
+        ]
+      }
 
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5',
-        'rgba(16, 126, 125, 0.5)',
-        'rgba(189, 191, 9, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-        'rgba(52, 89, 149, 0.5)',
-        'rgba(3, 206, 164, 0.5)',
-        'rgba(251, 77, 61, 0.5)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1',
-        'rgba(16, 126, 125, 1)',
-        'rgba(189, 191, 9, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(52, 89, 149, 1)',
-        'rgba(3, 206, 164, 1)',
-        'rgba(251, 77, 61, 1)'
-      ],
-      borderWidth: 1.5,
-    }, {
-      data: [{
-        "x": 9037,
-        "y": 930,
-        "r": 27
-      }, {
-        "x": 10478,
-        "y": 1035,
-        "r": 27
-      }, {
-        "x": 10628,
-        "y": 1050,
-        "r": 28
-      }, {
-        "x": 10734,
-        "y": 1060,
-        "r": 30
-      }, {
-        "x": 14600,
-        "y": 1320,
-        "r": 31
-      }, {
-        "x": 14934,
-        "y": 1360,
-        "r": 31
-      }, {
-        "x": 14941,
-        "y": 1370,
-        "r": 34
-      }, {
-        "x": 18451,
-        "y": 1560,
-        "r": 35
-      }, {
-        "x": 25427,
-        "y": 2015,
-        "r": 42
-      }, {
-        "x": 27717,
-        "y": 2150,
-        "r": 53
-      }],
+    ]
+  },
+});
 
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5',
-        'rgba(16, 126, 125, 0.5)',
-        'rgba(189, 191, 9, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-        'rgba(52, 89, 149, 0.5)',
-        'rgba(3, 206, 164, 0.5)',
-        'rgba(251, 77, 61, 0.5)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1',
-        'rgba(16, 126, 125, 1)',
-        'rgba(189, 191, 9, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(52, 89, 149, 1)',
-        'rgba(3, 206, 164, 1)',
-        'rgba(251, 77, 61, 1)'
-      ],
-      borderWidth: 1.5,
-    }, {
-      data: [{
-        "x": 4713,
-        "y": 550,
-        "r": 28
-      }, {
-        "x": 4753,
-        "y": 580,
-        "r": 30
-      }, {
-        "x": 4822,
-        "y": 599,
-        "r": 32
-      }, {
-        "x": 5110,
-        "y": 610,
-        "r": 35
-      }, {
-        "x": 5290,
-        "y": 625,
-        "r": 30
-      }, {
-        "x": 5456,
-        "y": 660,
-        "r": 31
-      }, {
-        "x": 5694,
-        "y": 685,
-        "r": 31
-      }, {
-        "x": 5821,
-        "y": 700,
-        "r": 34
-      }, {
-        "x": 6520,
-        "y": 750,
-        "r": 35
-      }, {
-        "x": 8886,
-        "y": 920,
-        "r": 70
-      }],
+var sixbar = new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+    labels: ["Harry", "Rand", "Egwene", "Perrin", "Roland", "Elayne", "Eragon", "Nynaeve", "Simon", "Eddie", "Hermione", "Elend", "Garion", "Jake", "Arthur", "Moiraine", "Dumbledore", "Susannah", "Kelsier"],
+    datasets: [{
+      datalabels: {
+        display: false
+      },
+      data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
+      fill: false,
 
+      //hp="rgba(255, 99, 132, 0.2)", wot="rgba(255, 159, 64, 0.2)", dt="rgba(255, 205, 86, 0.2)", mistborn="rgba(75, 192, 192, 0.2)", intce"rgba(54, 162, 235, 0.2)", mem="rgba(153, 102, 255, 0.2)", belg="rgba(201, 203, 207, 0.2)", pend='rgba(3, 206, 164)', 'rgba(76, 170, 120)'
       backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5',
-        'rgba(16, 126, 125, 0.5)',
-        'rgba(189, 191, 9, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-        'rgba(52, 89, 149, 0.5)',
-        'rgba(3, 206, 164, 0.5)',
-        'rgba(251, 77, 61, 0.5)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1',
-        'rgba(16, 126, 125, 1)',
-        'rgba(189, 191, 9, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(52, 89, 149, 1)',
-        'rgba(3, 206, 164, 1)',
-        'rgba(251, 77, 61, 1)'
-      ],
-      borderWidth: 1.5,
-    }, {
-      data: [{
-        "x": 2425,
-        "y": 345,
-        "r": 20
-      }, {
-        "x": 2643,
-        "y": 375,
-        "r": 28
-      }, {
-        "x": 2730,
-        "y": 390,
-        "r": 30
-      }, {
-        "x": 2766,
-        "y": 410,
-        "r": 32
-      }, {
-        "x": 2801,
-        "y": 420,
-        "r": 35
-      }, {
-        "x": 3639,
-        "y": 475,
-        "r": 30
-      }, {
-        "x": 4152,
-        "y": 520,
-        "r": 31
-      }, {
-        "x": 4259,
-        "y": 540,
-        "r": 31
-      }, {
-        "x": 4303,
-        "y": 570,
-        "r": 34
-      }, {
-        "x": 18434,
-        "y": 1590,
-        "r": 35
-      }],
-
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5',
-        'rgba(16, 126, 125, 0.5)',
-        'rgba(189, 191, 9, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-        'rgba(52, 89, 149, 0.5)',
-        'rgba(3, 206, 164, 0.5)',
-        'rgba(251, 77, 61, 0.5)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1',
-        'rgba(16, 126, 125, 1)',
-        'rgba(189, 191, 9, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(52, 89, 149, 1)',
-        'rgba(3, 206, 164, 1)',
-        'rgba(251, 77, 61, 1)'
-      ],
-      borderWidth: 1.5,
-    }],
+        'rgb(255,237,160)',
+        'rgb(255,247,188)',
+        'rgb(255,247,188)',
+        'rgb(255,247,188)',
+        'rgb(254,217,118)',
+        'rgb(255,247,188)',
+        'rgb(254,178,76)',
+        'rgb(255,247,188)',
+        'rgb(253,141,60)',
+        'rgb(254,217,118)',
+        'rgb(255,237,160)',
+        'rgb(252,78,42)',
+        'rgb(227,26,28)',
+        'rgb(254,217,118)',
+        'rgb(177,0,38)',
+        'rgb(255,247,188)',
+        'rgb(255,237,160)',
+        'rgb(254,217,118)',
+        'rgb(252,78,42)',
+      ]
+    }]
   },
   options: {
     scales: {
-      xAxes: [{
-        display: true
-      }],
       yAxes: [{
-        type: 'logarithmic',
-        display: false
-      }],
-    },
-    plugins: {
-      datalabels: {
-        align: 'center',
-        offset: '30',
-        font: {
-          weight: 'bold'
-        },
-        formatter: function(value, context) {
-          return context.chart.data.labels[context.dataIndex];
-        },
-      },
-      colorschemes: {
-        scheme: 'office.VioletII6'
-      }
+        ticks: {
+          beginAtZero: true
+        }
+      }]
     }
   }
-}); */
+});
+
+new Chart(document.getElementById("siixbar"), {
+  "type": "horizontalBar",
+  "data": {
+    "labels": ['moment', 'behind', 'enough', 'turned', 'little', 'though', 'around', 'seemed', 'looked', 'before'],
+    "datasets": [{
+      "label": "Top ten 6 letter words",
+      "data": [16147, 16183, 17080, 18041, 18565, 18586, 20531, 21206, 25488, 31869],
+      "fill": false,
+      "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+      "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+      "borderWidth": 1
+    }]
+  },
+  "options": {
+    "scales": {
+      "yAxes": [{
+        "ticks": {
+          "beginAtZero": true
+        }
+      }]
+    }
+  }
+});

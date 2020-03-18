@@ -443,3 +443,168 @@
   </svg>
 </div>
 </section>
+
+var ctx = document.getElementById('namesbar');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: labels: [
+      "Harry",
+      "Rand",
+      "Egwene",
+      "Perrin",
+      "Roland",
+      "Elayne",
+      "Eragon",
+      "Nynaeve",
+      "Simon",
+      "Eddie",
+      "Hermione",
+      "Elend",
+      "Garion",
+      "Jake",
+      "Arthur",
+      "Moiraine",
+      "Dumbledore",
+      "Susannah",
+      "Kelsier"],
+
+    datasets: [{
+      datalabels: {
+        display: false
+      },
+      label: 'Number of words',
+      data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
+      fill: false,
+      backgroundColor: [
+        'rgb(17,30,108)',
+        'rgb(0,142,204)',
+        'rgb(0,142,204)',
+        'rgb(0,142,204)',
+        'rgb(0,128,129)',
+        'rgb(0,142,204)',
+        'rgb(70,130,180)',
+        'rgb(0,142,204)',
+        'rgb(15,82,186)',
+        'rgb(0,128,129)',
+        'rgb(17,30,108)',
+        'rgb(63,234,208)',
+        'rgb(101,147,245)',
+        'rgb(0,128,129)',
+        'rgb(88,139,174)',
+        'rgb(0,142,204)',
+        'rgb(17,30,108)',
+        'rgb(0,128,129)'
+      ],
+      borderWidth: 2
+    }]
+  },
+  options: [{
+    plugins: {
+      colorschemes: {
+        scheme: 'office.VioletII6'
+      }
+    },
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }]
+});
+
+new Chart(document.getElementById("namesbar"), {
+  type: "bar",
+  data: {
+    labels: ["Harry", "Rand", "Egwene", "Perrin", "Roland", "Elayne", "Eragon", "Nynaeve", "Simon", "Eddie", "Hermione", "Elend", "Garion", "Jake", "Arthur", "Moiraine", "Dumbledore", "Susannah", "Kelsier"],
+    datasets: [{
+      data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
+      fill: false,
+
+      //hp="rgba(255, 99, 132, 0.2)", wot="rgba(255, 159, 64, 0.2)", dt="rgba(255, 205, 86, 0.2)", mistborn="rgba(75, 192, 192, 0.2)", intce"rgba(54, 162, 235, 0.2)", mem="rgba(153, 102, 255, 0.2)", belg="rgba(201, 203, 207, 0.2)", pend='rgba(3, 206, 164)', 'rgba(76, 170, 120)'
+      backgroundColor: [
+        'rgb(17,30,108)',
+        'rgb(0,142,204)',
+        'rgb(0,142,204)',
+        'rgb(0,142,204)',
+        'rgb(0,128,129)',
+        'rgb(0,142,204)',
+        'rgb(70,130,180)',
+        'rgb(0,142,204)',
+        'rgb(15,82,186)',
+        'rgb(0,128,129)',
+        'rgb(17,30,108)',
+        'rgb(63,234,208)',
+        'rgb(101,147,245)',
+        'rgb(0,128,129)',
+        'rgb(88,139,174)',
+        'rgb(0,142,204)',
+        'rgb(17,30,108)',
+        'rgb(0,128,129)'
+      ]
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+// ==================================================================
+// beginning of bar chart for name count
+// ==================================================================
+
+
+new Chart(document.getElementById("namesbar"), {
+  type: "bar",
+  data: {
+    labels: ["Harry", "Rand", "Egwene", "Perrin", "Roland", "Elayne", "Eragon", "Nynaeve", "Simon", "Eddie", "Hermione", "Elend", "Garion", "Jake", "Arthur", "Moiraine", "Dumbledore", "Susannah", "Kelsier"],
+    datasets: [{
+      datalabels: {
+        display: false
+      },
+      data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
+      fill: false,
+
+      //hp="rgba(255, 99, 132, 0.2)", wot="rgba(255, 159, 64, 0.2)", dt="rgba(255, 205, 86, 0.2)", mistborn="rgba(75, 192, 192, 0.2)", intce"rgba(54, 162, 235, 0.2)", mem="rgba(153, 102, 255, 0.2)", belg="rgba(201, 203, 207, 0.2)", pend='rgba(3, 206, 164)', 'rgba(76, 170, 120)'
+      backgroundColor: [
+        'rgb(255,237,160)',
+      'rgb(255,247,188)',
+      'rgb(255,247,188)',
+      'rgb(255,247,188)',
+      'rgb(254,217,118)',
+      'rgb(255,247,188)',
+      'rgb(254,178,76)',
+      'rgb(255,247,188)',
+      'rgb(253,141,60)',
+      'rgb(254,217,118)',
+      'rgb(255,237,160)',
+      'rgb(252,78,42)',
+      'rgb(227,26,28)',
+      'rgb(254,217,118)',
+      'rgb(177,0,38)',
+      'rgb(255,247,188)',
+      'rgb(255,237,160)',
+      'rgb(254,217,118)',
+      'rgb(252,78,42)',
+]
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
