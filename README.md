@@ -9,23 +9,7 @@ Frodotype was built using Tensorflow, docker, Google Cloud Platform, Javascript,
 
 # Gathering the data
 
-The 102 books used were converted from the Amazon Kindle format .azw to plain text files. This processes included stripping all images, formattting, and hyperlinks. The books then manually had the table of contents, appencices, and gloassaries manually removed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Putting the final text file together:
+The 102 books used were converted from the Amazon Kindle format .azw to plain text files. This processes included stripping all images, formattting, and hyperlinks. The books were then manually stripped of their table of contents, appencices, and glossaries. The final text file used to retrain the model was put together using the following commands:
 
 1. Concatenate the files:
 
@@ -40,3 +24,9 @@ $ LC_ALL=C tr -dc '\0-\177' < unprocessed.txt > processed.txt
 $ tr -d '[0-9-]' < processed.txt > final.txt
 
 Additional processing is done in the text-analysis notebook.
+
+# Training the model
+
+The model was trained on a Google Deep Learning VM using a Tesla K80 GPU, TensorFlow 1.15, and CUDA 10.0.
+
+The model was retrained using gpt-2-simple, a python package that eases the process of tweeking hyperparameters. The model was trained for three differeing lengths. The one used in this app was trianed for 45,000 steps or approximattly 90 hours. Two additional models were trained at 25,000 steps and 80,000 steps. The smaller of the two models had a much higher loss value, while the larger model had a simillar loss that began to increase towards the end.
