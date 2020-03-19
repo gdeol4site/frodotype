@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--===================================================================================================-->
-  <title>FrodoType Fantasy Text Generator</title>
+  <title>FrodoType Text Gen</title>
   <!--===================================================================================================-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
@@ -14,6 +14,7 @@
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
   <!--===================================================================================================-->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
@@ -95,20 +96,20 @@
         <div class="columns">
           <div class="column">
             <p class="title-font typed"> FrodoType </p>
-            <div class="column is-5  slight-left">
+            <div class="column is-6  slight-left">
               <h5 class="subtitle is-4 has-text-justified" id="typedtext"> </h5>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="wave-container svg-bg">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 245">
+    <div class="wave-container-red svg-bg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="white" fill-opacity="1"
           d="M0,192L60,202.7C120,213,240,235,360,208C480,181,600,107,720,69.3C840,32,960,32,1080,26.7C1200,21,1320,11,1380,5.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
         </path>
       </svg>
-      <p style="font-family: 'Sen'; font-size: 4rem; color: white; font-weight: 700;"> Generate Text </p>
+      <p style="font-family: 'Open Sans'; font-size: 4rem; color: white; font-weight: 700;"> Text Generator </p>
       <!--<p class="">generate text <i class="em-svg em-lower_left_ballpoint_pen" aria-role="presentation" aria-label=""></i></p>-->
     </div>
   </section>
@@ -123,11 +124,11 @@
   </section>
 -->
   <section class="is-fullheight">
-    <div class="wave-container svg-bg" style="height:100%; width:100%;">
+    <div class="wave-container-red svg-bg" style="height:100%; width:100%;">
       <!--<h1> &nbsp; </h1>
       <p class="" style="font-size: 3rem;">generate text <i class="em-svg em-lower_left_ballpoint_pen" aria-role="presentation" aria-label=""></i></p>-->
-      <p style="font-family: 'sen'; font-size: 1.15rem; color: white;"> This is a paragrpah of gibberish to test out the code </p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
+      <p style="font-family: 'Open Sans'; font-size: 1.15rem; color: white;">  </p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="white" fill-opacity="1"
           d="M0,32L30,53.3C60,75,120,117,180,144C240,171,300,181,360,186.7C420,192,480,192,540,208C600,224,660,256,720,229.3C780,203,840,117,900,106.7C960,96,1020,160,1080,208C1140,256,1200,288,1260,298.7C1320,309,1380,299,1410,293.3L1440,288L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
         </path>
@@ -154,9 +155,7 @@
                 <div class="column">
                   <div class="container has-text-justified">
                     <label class="label">Text Prompt</label>
-                    <h3 class="subtitle is-6"> A text prompt acts as a seed for the modified GPT2 model. This model computes the probability of the next word given the contents of the prompt. This is a simple probability distribution over a sequence
-                      of
-                      words.</h3>
+                    <h3 class="subtitle is-6"> A text prompt acts as a seed for the model which then computes a sequence of words based on probability.</h3>
                   </div>
                 </div>
                 <!--INPUT FORM -->
@@ -165,7 +164,7 @@
                   <div class="field">
                     <label class="label">Text prompt</label>
                     <div class="control">
-                      <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="1"></textarea>
+                      <textarea id="prefix" class="textarea" type="text" placeholder="The man in black fled across the desert" rows="1"></textarea>
                     </div>
                     <!-- optional box subtext <p class="subtitle is-6"> Optional: max 500 characters </p> -->
                   </div>
@@ -181,7 +180,7 @@
                 <div class="column">
                   <div class="container has-text-justified">
                     <label class="label">Generated length</label>
-                    <h3 class="subtitle is-6"> This is the length of the generated text and can generate a max of 1023 words. The maximum length generation can take up to two minutes. </h3>
+                    <h3 class="subtitle is-6"> The length of the generated text. A max of 1023 words can be generated - which can take up to two minutes. </h3>
                   </div>
                 </div>
                 <!--INPUT FORM -->
@@ -207,7 +206,7 @@
                   <div class="container has-text-justified">
                     <label class="label">Temperature</label>
                     <!-- https://cs.stackexchange.com/questions/79241/what-is-temperature-in-lstm-and-neural-networks-generally -->
-                    <h3 class="subtitle is-6"> Temperature is used to control the randomness of predictions. When the temperature approaches 1, predictions become less confident and more "creative".
+                    <h3 class="subtitle is-6"> Temperature controls the randomness of predictions. When the temperature approaches 1 predictions become less confident and more "creative".
                       Temperature therefore increases the sensitivity to low probability candidates.</h3>
                   </div>
                 </div>
@@ -233,7 +232,7 @@
                 <div class="column">
                   <div class="container">
                     <label class="label">Top k</label>
-                    <h3 class="subtitle is-6"> Constrains the generated text tokens to the top k possibilities. (set to 0 to disable) </h3>
+                    <h3 class="subtitle is-6"> Top-k limits the generated words to a select number of words with the highest probability of appearing. Setting the value to 0 removes this restriction. </h3>
                   </div>
                 </div>
                 <!--INPUT FORM -->
@@ -292,7 +291,7 @@
         </div>
       </div>
     </div>
-    <div class="wave-container-coral svg-bg3" id="charts">
+    <div class="wave-container-coral svg-bg" id="charts">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 330">
         <path fill="#ffffff" fill-opacity="1"
           d="M0,96L21.8,133.3C43.6,171,87,245,131,282.7C174.5,320,218,320,262,272C305.5,224,349,128,393,106.7C436.4,85,480,139,524,154.7C567.3,171,611,149,655,160C698.2,171,742,213,785,218.7C829.1,224,873,192,916,202.7C960,213,1004,267,1047,272C1090.9,277,1135,235,1178,218.7C1221.8,203,1265,213,1309,218.7C1352.7,224,1396,224,1418,224L1440,224L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z">
@@ -305,7 +304,7 @@
   <!--=============== SECTION 4: DASHBOARD ===============-->
 
   <section class="is-fullheight">
-    <div class="wave-container-coral svg-bg3">
+    <div class="wave-container-coral svg-bg">
       <p style="font-family: 'sen'; font-size: 1.15rem; color: white;"> This is a paragrpah of gibberish to test out the code </p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="white" fill-opacity="1"
@@ -318,6 +317,14 @@
 
     <!--=============== DASHBOARD CARDS ===============-->
     <div class="section">
+      <div class="columns" style="margin-top:-80px;">
+      <div class="column is-6 is-offset-1">
+      <div class="card-content" style="background-color: #white;">
+        <p style="font-family: 'sen'; color: black; font-size: 3.3vw;">Overview of data</p>
+        <!-- <p style="font-family: 'sen'; color: black; font-size: 2vw;" class="subtitle"> The top 5 authors contribute 58.1% of the data across 42 novels. The largest volume of text belongs to the late Robert Jordan and his series "The Wheel of Time" with ~20% of the total. The second largest share can be attributed to Canadian author Steven Erikson and his series "Malazan Book of the Fallen" at ~16%.</p> -->
+      </div>
+    </div>
+  </div>
 
       <div class="columns is-multiline">
 
@@ -391,7 +398,7 @@
               <div class="level-item has-text-centered">
                 <div class="">
                   <div class="heading">Times Mentioned</div>
-                  <div class="title is-5">16787
+                  <div class="title is-5">16,787
                     <span class="icon">
                       <i class="fas fa-hat-wizard"></i>
                     </span></div>
@@ -416,9 +423,8 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 3.3vw;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 2vw;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is
-                giberish this is </p>
+              <p style="font-family: 'sen'; color: black; font-size: 3.3vw;">Word count by author</p>
+              <!-- <p style="font-family: 'sen'; color: black; font-size: 2vw;" class="subtitle"> The top 5 authors contribute 58.1% of the data across 42 novels. The largest volume of text belongs to the late Robert Jordan and his series "The Wheel of Time" with ~20% of the total. The second largest share can be attributed to Canadian author Steven Erikson and his series "Malazan Book of the Fallen" at ~16%.</p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -437,9 +443,9 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 3.3vw;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 2vw;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is
-                giberish this is </p>
+              <p style="font-family: 'sen'; color: black; font-size: 3.3vw;">Author word counts and average words per book</p>
+              <!--<p style="font-family: 'sen'; color: black; font-size: 2vw;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is
+                giberish this is </p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -458,10 +464,10 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
+              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Names counts by series</p>
+              <!--<p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
                 is
-                giberish this is </p>
+                giberish this is </p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -480,10 +486,10 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
+              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Top 20 names</p>
+              <!--<p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
                 is
-                giberish this is </p>
+                giberish this is </p>-->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -502,10 +508,10 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
+              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Most frequently used 6 letter words</p>
+              <!-- <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
                 is
-                giberish this is </p>
+                giberish this is </p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -524,10 +530,10 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
+              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Most frequently used 7 letter words</p>
+              <!-- <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
                 is
-                giberish this is </p>
+                giberish this is </p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -546,10 +552,10 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
+              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Most frequently used 8 letter words</p>
+            <!--  <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
                 is
-                giberish this is </p>
+                giberish this is </p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -568,10 +574,10 @@
         <div class="box">
           <article>
             <div class="card-content" style="background-color: #white;">
-              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Word Count by Author </p>
-              <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
+              <p style="font-family: 'sen'; color: black; font-size: 2rem;">Most frequently used 9 letter words</p>
+            <!--  <p style="font-family: 'sen'; color: black; font-size: 1.15rem;" class="subtitle">This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This is giberish this is This
                 is
-                giberish this is </p>
+                giberish this is </p> -->
             </div>
             <div style="position: relative;">
               <div style="width: 100%; min-height:100%;">
@@ -594,7 +600,10 @@
     <div class="columns">
       <div class="column is-8 is-offset-2">
         <div class="box">
-
+          <div class="card-content" style="background-color: #white;">
+            <p style="font-family: 'sen'; color: black; font-size: 3.3vw;">Data Table of authors. their books, and general statistics</p>
+            <!-- <p style="font-family: 'sen'; color: black; font-size: 2vw;" class="subtitle"> The top 5 authors contribute 58.1% of the data across 42 novels. The largest volume of text belongs to the late Robert Jordan and his series "The Wheel of Time" with ~20% of the total. The second largest share can be attributed to Canadian author Steven Erikson and his series "Malazan Book of the Fallen" at ~16%.</p> -->
+          </div>
           <!--TABLE HEADER-->
 
           <table class="table">
