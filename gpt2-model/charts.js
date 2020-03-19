@@ -236,6 +236,7 @@ new Chart(document.getElementById("namesbar"), {
       datalabels: {
         display: false
       },
+      label: "Name frequency",
       data: [16787, 12579, 7878, 7134, 6973, 6866, 6668, 6319, 6033, 5686, 4985, 4457, 4045, 3889, 3798, 3589, 2890, 2733, 3399],
       fill: false,
 
@@ -283,7 +284,7 @@ new Chart(document.getElementById("sixbar"), {
   data: {
     labels: ['moment', 'behind', 'enough', 'turned', 'little', 'though', 'around', 'seemed', 'looked', 'before'],
     datasets: [{
-      label: "My First Dataset",
+      label: "Six letter words",
       data: [16147, 16183, 17080, 18041, 18565, 18586, 20531, 21206, 25488, 31869],
       fill: false,
       backgroundColor: ['#D1C4E9',
@@ -326,7 +327,7 @@ new Chart(document.getElementById("sevenbar"), {
   data: {
     labels: ['herself', 'between', 'looking', 'without', 'nothing', 'another', 'against', 'himself', 'thought', 'through'],
     datasets: [{
-      label: "My First Dataset",
+      label: "Seven letter words",
       data: [9037, 10478, 10628, 10734, 14600, 14934, 14941, 18451, 25427, 27717],
       fill: false,
       backgroundColor: ['#BBDEFB',
@@ -369,7 +370,7 @@ new Chart(document.getElementById("eightbar"), {
   data: {
     labels: ['darkness', 'remember', 'happened', 'followed', 'standing', 'shoulder', 'soldiers', 'together', 'suddenly', 'anything'],
     datasets: [{
-      label: "My First Dataset",
+      label: "Eight letter words",
       data: [4713, 4753, 4822, 5110, 5290, 5456, 5694, 5821, 6520, 8886],
       fill: false,
       backgroundColor: [
@@ -413,7 +414,7 @@ new Chart(document.getElementById("ninebar"), {
   data: {
     labels: ['carefully', 'important', 'sometimes', 'surprised', 'attention', 'shoulders', 'whispered', 'different', 'continued', 'something'],
     datasets: [{
-      label: "My First Dataset",
+      label: "Nine letter words",
       data: [2425, 2643, 2730, 2766, 2801, 3639, 4152, 4259, 4303, 4303],
       fill: false,
       backgroundColor: [
