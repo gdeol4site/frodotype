@@ -29,7 +29,7 @@ $('.navbar-burger').click(function() {
 // set up text to print, each item in array is new line
 var aText = new Array(
   //"                                     ",
-  "Fantasy is a text generator based on OpenAI's small GPT2 model and is further trained and finetuned on the text of fantasy novels. Change the parameters on the right to generate interesting text."
+  "Frodotype is a text generator based on OpenAI's small GPT2 model and is further trained and finetuned on the text of fantasy novels. Changing the parameters will produce interesting text that could be used for outlining your own stories and sparking ideas."
 );
 var iSpeed = 17; // time delay of print out
 var iIndex = 0; // start printing array at this posision
